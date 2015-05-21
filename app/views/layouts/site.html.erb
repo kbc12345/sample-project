@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sourcepad</title>
+  <%= stylesheet_link_tag    'site', media: 'all'%>
+  <%= javascript_include_tag 'site' %>
+  <script src="//use.typekit.net/sia2sla.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
