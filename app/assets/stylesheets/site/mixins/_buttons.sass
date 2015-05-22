@@ -16,6 +16,7 @@
     background-color: mix(black, $bg-color, 15%)
     border-color: mix(black, $bg-color, 15%)
     cursor: hand
+    +btn-transition
 
   &.no-hover
     &:hover, &:focus, &:active
@@ -46,16 +47,26 @@
   white-space: nowrap
   background-color: transparent
   border-radius: $global-radius
-  border: 2px solid $bg-color
+  border: 2px solid $color
   box-sizing: border-box
 
   &:hover, &:focus, &:active
+    border-color: $bg-color
+    background: $bg-color
     color: $white
-    background-color: mix(black, $bg-color, 15%)
-    border-color: mix(black, $bg-color, 15%)
-    cursor: hand
+    +btn-transition
 
   &.no-hover
     &:hover, &:focus, &:active
       color: $color
       background-color: $bg-color
+
+
+
+=btn-transition
+  $delay: 0.4s
+  -webkit-transition: all ease $delay
+  -moz-transition: all ease $delay
+  -o-transition: all ease $delay
+  -ms-transition: all ease $delay
+  transition: all ease $delay
