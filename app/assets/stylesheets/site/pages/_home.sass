@@ -70,6 +70,7 @@
     list-style: none
     li
       color: $primary
+      margin-bottom: 30px
       p
         margin-top: 15px
       h5
@@ -180,3 +181,21 @@
   min-height: 100%
   width: 1px
   left: 50%
+  +hide-mobile
+
+
+
+
+
++respond-to(0,$tablet-s)
+  #about
+    h1,h2,p,a
+      text-align: center
+    .about-list
+      text-align: center
+    .about-details
+      margin-bottom: 50px
+      text-align: center
+
+  .align-right
+    text-align: center
