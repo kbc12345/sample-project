@@ -18,28 +18,20 @@ body
   line-height: 1.6
   font-weight: 400
 
-h1,h2,h3
-  font-family: $primary-font
-  font-weight: 200
-  margin: 0px
-h1
-  font-size: 45px
-h2
-  font-size: 30px
-h3
-  font-size: 20px
 
 a
-  color: $white
-  outline:none
-  text-decoration: none
+  color: $primary
+  outline: underline
+  
   // +linear-transition
   &:hover
     text-decoration: none
-    color: $white
+    color: mix(black, $primary, 15%)
   &:focus
     color: $white
     text-decoration: none
+  &.underline
+    text-decoration: underline
 
 hr
   margin: 10px 0px
