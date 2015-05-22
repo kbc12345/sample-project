@@ -13,8 +13,8 @@ gem "cocoon"
 gem "devise"
 gem 'thin'
 gem 'will_paginate'
-
-
+gem 'unicorn'
+gem 'rails_12factor', group: :production
 group :development do
   gem 'capistrano', '~> 3.2.0', require: false
   gem 'capistrano-rails', '~> 1.1', require: false
