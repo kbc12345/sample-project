@@ -1,3 +1,80 @@
-.header-container
-  background-color: $white
-  height: 60px
+#header
+  width: 100%
+  height: 80px
+  line-height: 80px
+  position: absolute
+  top: 0
+  left: 0
+  overflow: hidden
+  z-index: 10
+
+
+  &.sticky
+    background: rgba(255, 255, 255, 0.95)
+
+  .logo
+    color: $white
+    padding-left: 130px
+
+  ul#navigation
+    float: right
+    margin-right: 130px
+    list-style: none
+    li
+      margin-left: 40px
+      display: inline-block
+
+#landing
+  height: 100%
+  width: 100%
+  background: image-url('header.jpg') no-repeat center center 
+  background-position-y: 1px
+  position: relative
+  +bg-cover
+
+  #landing-text
+    text-align: center
+    color: $white
+    h1
+      font-size: 90px
+    h4
+      font-size: 26px
+
+    .btn
+      margin-top: 10px
+      padding: 10px 40px
+      font-size: 16px
+
+
+#about
+  margin-top: 70px
+  .about-details
+    h2
+      color: $primary
+    p
+      margin-top: 15px
+    &.right
+      text-align: right
+    &.left
+      text-align: left
+
+  ul.about-list
+    padding: 0px
+    margin: 0px
+    list-style: none
+    li
+      color: $primary
+      p
+        margin-top: 15px
+      h5
+        display: inline-block
+        &.pull-top
+          position: relative
+          top: -20px
+
+
+  .about-icon
+    width: 80px
+    position: relative
+    top: 15px
+    margin-left: 15px

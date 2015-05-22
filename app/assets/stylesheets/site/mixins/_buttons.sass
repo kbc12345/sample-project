@@ -1,15 +1,21 @@
 =buttons($color, $bg-color)
+  display: inline-block
+  padding: 0 30px
   color: $color
+  text-align: center
+  font-size: 11px
+  text-decoration: none
+  white-space: nowrap
   background-color: $bg-color
-  font-size: 13px
-  padding: 10px 14px 8px 14px
+  border-radius: $global-radius
   border: 1px solid $bg-color
+  box-sizing: border-box
 
   &:hover, &:focus, &:active
     color: $white
     background-color: mix(black, $bg-color, 15%)
     border-color: mix(black, $bg-color, 15%)
-    cursor: pointer
+    cursor: hand
 
   &.no-hover
     &:hover, &:focus, &:active

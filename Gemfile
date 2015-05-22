@@ -26,6 +26,5 @@ end
 
 group :development do
   gem "better_errors"
-  gem 'rack-mini-profiler'
   gem "binding_of_caller"
 end
