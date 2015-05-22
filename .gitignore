@@ -28,11 +28,10 @@ rerun.txt
 pickle-email-*.html
 .DS_Store
 
-config/initializers/secret_token.rb
+
 config/carriers.yml
 config/database.yml
 config/mandrill.yml
-config/secrets.yml
 config/settings.yml
 config/sms.yml
 config/paypal.yml
