@@ -1,0 +1,34 @@
+
+
+#acquired
+  top: -1px
+  padding: 100px 0px
+  background: image-url('acquired.jpg') no-repeat center center 
+  background-position-y: 1px
+  position: relative
+  +bg-cover
+  
+  h2,p
+    color: $white
+
+  img
+    margin: 40px 0px
+    width: 100%
+
+  .quote-content
+    position: relative
+    top: 300px
+    p
+      font-size: 12px
+      font-style: italic
+      font-weight: 200
+
++respond-to(0,$desktop-s)
+
+  #acquired
+    .quote-content
+      display: none
+    .align-right
+      text-align: center
+    img
+      width: 90%

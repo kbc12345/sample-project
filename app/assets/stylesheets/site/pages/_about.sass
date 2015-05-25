@@ -1,0 +1,78 @@
+#about
+  padding: 70px 0px
+  .about-details
+    h2
+      color: $primary
+    p
+      margin-top: 15px
+    &.right
+      text-align: right
+    &.left
+      text-align: left
+
+  ul.about-list
+    padding: 0px
+    margin: 0px
+    list-style: none
+    &.push-top
+      margin-top: 50px
+    li
+      color: $primary
+      margin-bottom: 30px
+      p
+        margin-top: 15px
+      h6
+        display: inline-block
+        font-size: 18px
+        position: relative
+        top: 35px
+        &.pull-top
+          top: -20px
+        &.align-mid
+          top: 48px
+
+
+  .icon-clock,.icon-chat,.icon-users
+    border: 2px solid
+    border-radius: 50%
+    font-size: 42px
+    margin-left: 15px
+    float: right
+    position: relative
+    top: 17px
+
+  .icon-clock
+    padding: 8px 20px 4px 20px
+
+  .icon-chat
+    padding: 8px 20px 4px 20px
+
+  .icon-users
+    padding: 8px 20px 4px 20px
+
+
+
++respond-to(0,$desktop-m)
+  #about
+    ul.about-list
+      li 
+        .icon
+          float: none
+          display: inline-block
+
+        h6
+          display: block
+
+
++respond-to(0,$desktop-s)
+  #about
+    h1,h2,p,a
+      text-align: center
+    .about-list
+      &.push-top
+        text-align: center
+    .about-details
+      margin-bottom: 100px
+      text-align: center
+
+
