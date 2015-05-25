@@ -1,3 +1,9 @@
+#page-wrapper
+  &.pushed
+    margin-left: 300px
+    #btn-nav-toggle
+      margin-left: 310px
+
 #header
   width: 100%
   line-height: 80px
@@ -34,7 +40,7 @@
   height: 100%
   width: 100%
   background: image-url('header.jpg') no-repeat center center 
-  background-position-y: 1px
+  background-position-y: 0px
   position: relative
   +bg-cover
 
@@ -68,23 +74,39 @@
     padding: 0px
     margin: 0px
     list-style: none
+    &.push-top
+      margin-top: 50px
     li
       color: $primary
       margin-bottom: 30px
       p
         margin-top: 15px
-      h5
+      h6
         display: inline-block
+        font-size: 16px
         &.pull-top
           position: relative
           top: -20px
+        &.align-mid
+          position: relative
+          top: -10px
 
 
-  .about-icon
-    width: 80px
-    position: relative
-    top: 15px
+  .icon-clock,.icon-chat,.icon-users
+    border: 2px solid
+    border-radius: 50%
+    font-size: 42px
     margin-left: 15px
+
+  .icon-clock
+    padding: 12px 15px 9px 14px    
+
+  .icon-chat
+    padding: 15px 14px 7px 14px
+
+  .icon-users
+    padding: 13px 13px 9px 14px
+
 
 
 #awards
@@ -176,18 +198,26 @@
   background-size: 1px 10px
   background-repeat: repeat-y
   position: absolute
-  top: 800px
+  top: 620px
   height: 2025px
   min-height: 100%
   width: 1px
   left: 50%
-  +hide-mobile
+  +hide-desktop-s
 
 
++respond-to(0,$desktop-m)
+  #header .logo
+    padding-left: 50px
+  #header ul#navigation
+    margin-right: 50px
+
++respond-to(0,845px)
+  .desktop-nav
+    display: none
 
 
-
-+respond-to(0,$tablet-s)
++respond-to(0,$desktop-s)
   #about
     h1,h2,p,a
       text-align: center
@@ -199,3 +229,9 @@
 
   .align-right
     text-align: center
+
+
+
+
+
+

@@ -3,6 +3,7 @@
 <head>
   <title>Sourcepad</title>
   <%= stylesheet_link_tag    'site', media: 'all'%>
+  <link href="https://fontastic.s3.amazonaws.com/83ZHwZKyhFtb2gpHDQTHhA/icons.css" rel="stylesheet">
   <%= javascript_include_tag 'site' %>
 
   <%= csrf_meta_tags %>
@@ -13,7 +14,9 @@
 body { font-family: "effra", sans-serif;}
 </style>
 
-<%= yield %>
+<div id="page-wrapper">
+  <%= yield %>
+</div>
 
 
   <script src="//use.typekit.net/sia2sla.js"></script>

@@ -4,8 +4,8 @@ $phone-m: 568px
 $phone-l: 667px
 $phablet: 550px
 $tablet-s :768px
-$desktop: 1024px
-
+$desktop-s: 845px
+$desktop-m: 1000px
 
 =respond-to($min,$max)
   @if $max == 0
@@ -25,4 +25,8 @@ $desktop: 1024px
 
 =hide-mobile
   +respond-to(0,$tablet-s)
+    display: none
+
+=hide-desktop-s
+  +respond-to(0,$desktop-s)
     display: none

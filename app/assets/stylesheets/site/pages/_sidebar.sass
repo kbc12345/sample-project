@@ -1,0 +1,45 @@
+.mobile-nav
+  display: none
+  
+.sidebar
+  width: 300px
+  z-index: 10
+  overflow: visible
+  display: table-cell
+  position: fixed
+  background: #333
+  height: 100%
+  top: 0px
+
+  .inner
+    overflow: visible
+    position: relative
+    left: 0
+    top: 0
+    bottom: 0
+    width: inherit
+
+  h3
+
+  .menu
+    padding: 0px
+    margin: 0px
+    list-style: none
+    li
+      text-align: left
+      padding: 10px 20px
+      line-height: 30px
+      border-bottom: 1px solid rgba(0,0,0,.15)
+      a
+        color: rgba(255, 255, 255, 0.6)
+        text-decoration: none
+        display: block
+        padding: 0px
+        outline: 0!important
+        font-weight: 300
+        font-size: 12px
+        i
+          margin-right: 0
+          font-size: 16px
+        &:hover
+          color: $white

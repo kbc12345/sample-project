@@ -11,3 +11,21 @@
 .btn-blur
   +buttons($white,$primary-blur)
   border: 0px
+
+#btn-play
+  color: $white
+  text-decoration: none
+  font-size: 54px
+  right: 7px
+  +rotate(90deg)
+  &:hover
+    color: $primary
+
+#btn-nav-toggle
+  display: none
+  +respond-to(0,$desktop-s)
+    display: block
+    color: $white
+    text-decoration: none
+    font-size: 40px
+    margin-left: 15px
