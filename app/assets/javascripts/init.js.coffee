@@ -3,8 +3,16 @@ $(document).ready ->
   # makes the landing text center
   if $("#landing-text").length > 0
     relativeHeight = $(window).height()/2
-    $("#landing-text").css("margin-top", Math.floor(relativeHeight-130))
-    $("#pull-btn-section").css("margin-top", Math.floor(relativeHeight-250))
+    #meaning mobile
+    if relativeHeight <= 380
+      heightOffset = 230
+      playHeight = 310
+    else
+      heightOffset = 130
+      playHeight = 250
+
+    $("#landing-text").css("margin-top", Math.floor(relativeHeight-heightOffset))
+    $("#pull-btn-section").css("margin-top", Math.floor(relativeHeight-playHeight))
     $("#dash").css("top", $(window).height()-65)
 
 $(document).on "click", '.animate-anchor', (event) ->
