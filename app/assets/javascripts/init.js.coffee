@@ -14,15 +14,12 @@ $(document).on "click", '.animate-anchor', (event) ->
 
 $(document).on "click", '#btn-nav-toggle', (event) ->
   event.preventDefault()
-  mobile_nav = $('.mobile-nav')
   wrapper = $('#page-wrapper')
   body = $('body')
 
-  if mobile_nav.hasClass("block")
-    mobile_nav.removeClass("block").addClass("hidden")
+  if wrapper.hasClass("pushed")
     wrapper.removeClass("pushed")
     body.removeClass("disable-scroll")
   else
-    mobile_nav.removeClass("hidden").addClass("block")
     body.addClass("disable-scroll")
     wrapper.addClass("pushed")
