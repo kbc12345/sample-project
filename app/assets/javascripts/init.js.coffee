@@ -5,14 +5,17 @@ $(document).ready ->
     relativeHeight = $(window).height()/2
     #meaning mobile
     if relativeHeight <= 380
-      heightOffset = 230
-      playHeight = 310
+      heightOffset = 150
+      playHeight = 210
+    else if relativeHeight <= 240
+      heightOffset = 80
+      playHeight = 25
     else
-      heightOffset = 130
-      playHeight = 250
+      heightOffset = Math.floor(relativeHeight-130)
+      playHeight =  Math.floor(relativeHeight-250)
 
-    $("#landing-text").css("margin-top", Math.floor(relativeHeight-heightOffset))
-    $("#pull-btn-section").css("margin-top", Math.floor(relativeHeight-playHeight))
+    $("#landing-text").css("margin-top", heightOffset)
+    $("#pull-btn-section").css("margin-top", playHeight)
     $("#dash").css("top", $(window).height()-65)
 
 $(document).on "click", '.animate-anchor', (event) ->
