@@ -5,7 +5,7 @@ $(document).ready ->
     relativeHeight = $(window).height()/2
     $("#landing-text").css("margin-top", Math.floor(relativeHeight-130))
     $("#pull-btn-section").css("margin-top", Math.floor(relativeHeight-250))
-    $("#dash").css("margin-top", Math.floor(relativeHeight-275))
+    $("#dash").css("margin-top", Math.floor(relativeHeight-245))
 
 $(document).on "click", '.animate-anchor', (event) ->
   event.preventDefault()
