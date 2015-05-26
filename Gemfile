@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+source 'https://rails-assets.org'
 
 gem 'rails', '4.2.1'
 gem 'sass-rails', '~> 4.0.3'
@@ -15,6 +15,25 @@ gem 'thin'
 gem 'will_paginate'
 gem 'unicorn'
 gem 'rails_12factor', group: :production
+
+
+#angular libs
+gem 'bourbon'
+gem 'angular-rails-templates', '0.1.3'
+gem 'rails-assets-angular'
+gem 'rails-assets-angular-ui-router'
+gem 'rails-assets-restangular'
+gem 'rails-assets-angular-resource'
+gem 'rails-assets-angular-mocks'
+gem 'rails-assets-angular-animate'
+gem 'rails-assets-angular-growl-2'
+gem 'rails-assets-angular-local-storage'
+gem 'rails-assets-angular-bindonce'
+gem 'rails-assets-ng-device-detector'
+gem 'rails-assets-angularjs-file-upload'
+gem 'rails-assets-ngSanitize'
+
+
 group :development do
   gem 'capistrano', '~> 3.2.0', require: false
   gem 'capistrano-rails', '~> 1.1', require: false

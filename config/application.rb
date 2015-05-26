@@ -21,6 +21,7 @@ module Sourcepad
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.angular_templates.inside_paths   = [Rails.root.join('app', 'cms')]
     config.active_record.raise_in_transactional_callbacks = true
   end
 end

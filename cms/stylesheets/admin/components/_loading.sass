@@ -1,0 +1,50 @@
+$color: #333
+$size: 200px
+$speed: 0.75s
+$thickness: 2px
+
+// Odd numbers created a "wobble" effect.
+
+// Animation Keyframes
+//********************************************************//
+=rotate-forever
+  0%
+    +transform(rotate(0deg))
+  100%
+    +transform(rotate(360deg))
+
+@-webkit-keyframes rotate-forever
+  +rotate-forever
+
+
+@-moz-keyframes rotate-forever
+  +rotate-forever
+
+
+@keyframes rotate-forever
+  +rotate-forever
+
+
+.loading-spinner
+  +animation-duration($speed)
+  +animation-iteration-count(infinite)
+  +animation-name(rotate-forever)
+  +animation-timing-function(linear)
+  +size($size)
+  border: $thickness solid $color
+  border-right-color: transparent
+  border-radius: 50%
+  display: inline-block
+  position: fixed
+  left: 50%
+
+
+.loading-overlay
+  z-index: 1
+  background-color: rgba(0,0,0,0.5)
+  min-width: 100%
+  min-height: 100%
+  content: ''
+  position: fixed
+  top: 150px
+  left: 0px

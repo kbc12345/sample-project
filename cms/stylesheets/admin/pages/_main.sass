@@ -1,0 +1,39 @@
+body
+  color: $dark
+  font-family: $primary-font
+  background-color: $dark-grey
+  font-size: 14px
+
+
+h1,h2,h3
+  font-family: $primary-font
+  font-weight: 200
+  margin: 0px
+h1
+  font-size: 45px
+h2
+  font-size: 30px
+h3
+  font-size: 20px
+
+a
+  color: $white
+  outline:none
+  text-decoration: none
+  // +linear-transition
+  &:hover
+    text-decoration: none
+    color: $white
+  &:focus
+    color: $white
+    text-decoration: none
+
+hr
+  margin: 10px 0px
+  border-top: 2px solid whitesmoke
+
+
+[ng-click],
+[data-ng-click],
+[x-ng-click],[ui-sref]
+  cursor: pointer
