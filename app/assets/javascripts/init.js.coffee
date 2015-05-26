@@ -5,11 +5,11 @@ $(document).ready ->
     relativeHeight = $(window).height()/2
     #meaning mobile
     if relativeHeight <= 280
-      textOffset = 140
-      playOffset = 150
+      textOffset = 160
+      playOffset = 170
     else if relativeHeight <= 380
-      textOffset = 220
-      playOffset = 160
+      textOffset = 240
+      playOffset = 180
     else if relativeHeight <= 240
       heightOffset = 80
       playOffset = 25
