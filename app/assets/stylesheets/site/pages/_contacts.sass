@@ -28,7 +28,8 @@
   margin-top: 50px
 
   .left-info,.right-info
-    height: 300px
+    height: 400px
+    position: relative
 
   .left-info
     text-align: right
@@ -37,18 +38,19 @@
     border-right: 1px solid #B2B2B2
 
     .info-text
-      position: relative
-      top: -210px
-      right: 20px
+      position: absolute
+      top: 150px
+      right: 40px
 
   .right-info
     background: image-url('map.png') no-repeat center center 
     background-position: inherit
 
     .info-text
-      position: relative
-      top: -210px
-      left: 20px
+      position: absolute
+      top: 150px
+      left: 40px
+
 
   .map-overlay
     position: relative
@@ -84,6 +86,6 @@
     color: $primary
 
 #contact-form
-  margin: 50px 0px 80px 0px
+  margin: 30px 0px 50px 0px
   textarea 
     height: 100px

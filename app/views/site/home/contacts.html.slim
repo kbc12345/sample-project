@@ -11,7 +11,19 @@ sectin#contact-intro
         h3 ASK US ANYTHING!
         p Contact us and we promise to be in touch within 24 hours!
 
-
+section#contact-form
+  .container
+    .row
+      .col-md-6.col-md-offset-5
+        form#contactForm name="contactForm"
+          .form-group
+            input.form-control placeholder="Email"
+          .form-group
+            input.form-control placeholder="Name"
+          .form-group
+            textarea.form-control placeholder="Message" rows="4" height="300px" cols="50"
+          input.btn.btn-primary.btn-block type="submit"
+          
 section#contact-info
 
     .row
@@ -36,15 +48,3 @@ section#contact-info
             br
             |(646) 583-2398
 
-section#contact-form
-  .container
-    .row
-      .col-md-6.col-md-offset-5
-        form#contactForm name="contactForm"
-          .form-group
-            input.form-control placeholder="Email"
-          .form-group
-            input.form-control placeholder="Name"
-          .form-group
-            textarea.form-control placeholder="Message" rows="4" height="300px" cols="50"
-          input.btn.btn-primary.btn-block type="submit"
