@@ -5,5 +5,8 @@ class Site::HomeController < SiteController
 
   end
 
+  def contacts
+  end
+
 
 end

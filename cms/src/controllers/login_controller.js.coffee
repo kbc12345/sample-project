@@ -2,6 +2,7 @@ angular.module('cms').controller 'LoginController',
 ['$scope','$rootScope','Session','$state','$http','localStorageService'
 ($scope,$rootScope,Session,$state,$http,localStorageService) ->
 
+  $rootScope.bodyClass = "login-page"
 
   $scope.credentials = 
     email: ""

@@ -1,1 +1,29 @@
-h1 ere
+.login-container
+  .row
+    .col-md-5
+      h2 SOURCEPAD CMS
+      form#login.login-form name="login"
+
+        .form-group
+          input.form-control(
+            name="email"
+            type="text" 
+            ng-model="credentials.email"
+            required="true"
+            ng-class="{error: form.email.$error.required && form.$submitted}"
+            ng-enter="login(form)"
+            placeholder="Email")
+
+        .form-group
+          input.form-control(
+            name="password"
+            type="text" 
+            ng-model="credentials.password"
+            required="true"
+            ng-class="{error: form.password.$error.required && form.$submitted}"
+            ng-enter="login(form)"
+            placeholder="Password")
+
+        .form-group
+          a.btn.btn-dark.btn-block.text-left ng-click="login(form)" Log In
+        

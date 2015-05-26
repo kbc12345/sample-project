@@ -1,0 +1,88 @@
+#contact-header
+  height: 100%
+  width: 100%
+  background: image-url('contact_banner.jpg') no-repeat center center 
+  background-position: inherit
+  border-bottom: 3px solid #46aea7
+  height: 250px
+
+  #contact-text
+    text-align: center
+    color: $white
+    padding: 0px 30px
+    h2
+      font-size: 50px
+    h4
+      font-size: 26px
+
+    .btn
+      margin-top: 10px
+      padding: 10px 40px
+      font-size: 16px
+
+#contact-intro
+  .map-icon-holder
+    margin-top: 30px
+
+#contact-info
+  margin-top: 50px
+
+  .left-info,.right-info
+    height: 300px
+
+  .left-info
+    text-align: right
+    background: image-url('map.png') no-repeat center center 
+    background-position: inherit
+    border-right: 1px solid #B2B2B2
+
+    .info-text
+      position: relative
+      top: -210px
+      right: 20px
+
+  .right-info
+    background: image-url('map.png') no-repeat center center 
+    background-position: inherit
+
+    .info-text
+      position: relative
+      top: -210px
+      left: 20px
+
+  .map-overlay
+    position: relative
+    height: 100%
+    &:after
+      position: absolute
+      content: ""
+      top: 0
+      left: -7px
+      width: 103%
+      height: 100%
+      opacity: .8
+      background-color: #F9F9F9
+
+    &:hover:after 
+      opacity: .0
+
+
+
+
+  +respond-to(0,$tablet-s)
+    text-align: center
+    .left-info
+      text-align: center
+
+
+.map-icon-holder
+  text-align: center
+  font-size: 60px
+
+  i
+    color: $primary
+
+#contact-form
+  margin: 50px 0px 80px 0px
+  textarea 
+    height: 100px
