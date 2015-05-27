@@ -1,7 +1,7 @@
 .login-container
   .row
     .col-md-5
-      h2 SOURCEPAD CMS
+      =image_tag('logo.png')
       form#login.login-form name="login"
 
         .form-group
@@ -25,5 +25,5 @@
             placeholder="Password")
 
         .form-group
-          a.btn.btn-dark.btn-block.text-left ng-click="login(form)" Log In
+          a.btn.btn-transparent.btn-block.text-left ng-click="login(form)" Log In
         
