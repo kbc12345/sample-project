@@ -1,11 +1,15 @@
 $(document).ready ->
 
+  #fastlick
+  FastClick.attach(document.body)
+
   # makes the landing text center
   if $("#landing-text").length > 0
     relativeHeight = $(window).height()/2
+    
     #meaning mobile
     if relativeHeight <= 280
-      textOffset = 160
+      textOffset = 140
       playOffset = 170
     else if relativeHeight <= 380
       textOffset = 220

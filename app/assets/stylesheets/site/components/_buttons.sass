@@ -18,11 +18,17 @@
   font-size: 54px
   right: 7px
   +rotate(90deg)
+  +hide-mobile
   &:hover
     color: $primary
 
+
 #btn-nav-toggle
   display: none
+  width: 70px
+  &:focus
+    text-decoration: none
+
   +respond-to(0,$desktop-s)
     display: block
     color: $white
