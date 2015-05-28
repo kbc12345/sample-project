@@ -14,6 +14,10 @@
 //= require ../../../cms/src/vendor/select/select.js
 //= require ../../../cms/src/vendor/moment/moment.js
 
+//= require ../../../cms/src/vendor/textangular/rangy.js
+//= require ../../../cms/src/vendor/textangular/sanitize.js
+//= require ../../../cms/src/vendor/textangular/textangular.js
+
 //= require ../../../cms/src/app
 //= require_tree ../../../cms/src/properties
 //= require_tree ../../../cms/src/routes

@@ -1,4 +1,4 @@
-json.extract! obj, *%i(
+json.extract! @obj, *%i(
   title
   status
   author

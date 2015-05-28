@@ -67,6 +67,37 @@ angular.module('cms').controller 'PostsController',
     else
       growl.error(MESSAGE.FORM_ERROR)
 
+
+  $scope.newPost = ->
+    $rootScope.stopLoading()
+    $scope.post = 
+      content: null
+
+  $scope.getObj = ->
+    Post.get(id: $state.params.id).$promise
+      .then (data) ->
+        $scope.post = data
+        $rootScope.stopLoading()
+      .catch (err) ->
+        $state.go("cms.posts.index")
+
+  $scope.save = ->
+    Post.save(post: $scope.post).$promise
+      .then (data) ->
+        growl.success(MESSAGE.SAVE_SUCCESS)
+        $state.go("cms.posts.index")
+      .catch (err) ->
+        $scope.disabledSubmit = false
+
+
+  $scope.update = ->
+    Post.update({id: $scope.post.id}, post: $scope.post).$promise
+      .then (data) ->
+        growl.success(MESSAGE.UPDATE_SUCCESS)
+        $state.go("cms.posts.index")
+      .catch (err) ->
+        $scope.disabledSubmit = false
+
   $scope.delete =(obj,index)->
     swal deleteWarning, ->
       $scope.collection.splice(index,1)

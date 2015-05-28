@@ -43,3 +43,13 @@
   
 .btn-dark
   +buttons(rgba(255, 255, 255, 0.6),rgba(63, 63, 63, 0.6))
+
+
+.btn-toolbar
+  .btn-group
+    margin-bottom: 10px
+  &.focussed
+    .btn-group .btn-default
+      background-color: transparent
+      &:hover
+        color: $black

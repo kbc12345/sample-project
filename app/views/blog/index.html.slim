@@ -1,0 +1,47 @@
+
+.blog-header
+  a href="/"
+    =image_tag('sourcepad_black.png')
+  h5 
+    |Made with love from 
+    a href="/" Sourcepad
+
+
+
+.blog-entries
+  .container
+    -(1..7).each do |i|
+      .row
+        .col-md-offset-4.col-md-8
+          .blog-entry
+            .blog-info
+              a href="#"
+                h4.title Lorem Ipsum Sample Title
+              span By
+              span.author Sam Piggot
+              | - 
+              span.date May 27, 2015
+            .blog-excerpt
+              p 
+                |Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
+                |Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
+
+
+.blog-footer
+  .row
+    .col-md-offset-4.col-md-8.text-center
+      a.btn.btn-default href="#" More Stories
+  .row
+    .col-md-offset-4.col-md-8
+      .footer-links
+        ul
+          li 
+            a href="/" Home
+          li 
+            a href="/works" Works
+          li 
+            a href="/career" Career
+          li 
+            a href="/contact" Contact
+          li.pull-right
+            span Copyright Sourcepad

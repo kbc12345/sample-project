@@ -9,6 +9,7 @@ cms = angular.module(
     'pasvaz.bindonce',
     'angular-growl',
     'LocalStorageModule',
+    'textAngular'
   ]
 )
 

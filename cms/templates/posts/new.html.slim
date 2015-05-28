@@ -1,4 +1,4 @@
-.page-content ng-init="getObj()"
+.page-content ng-init="newPost()"
   .panel
     .panel-heading
       h2 Posts
@@ -21,4 +21,4 @@
         .col-md-12
           .btn-group.pull-right
             a.btn.btn-default href="/cms/posts" Back
-            a.btn.btn-green ng-click="update()" ng-class="{disabled: disabledSubmit}" Save
+            a.btn.btn-green ng-click="save()" ng-class="{disabled: disabledSubmit}" Save

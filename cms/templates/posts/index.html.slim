@@ -13,7 +13,6 @@
                 th Title
                 th Status
                 th Posted Date
-                th Author
                 th
             tbody
               tr ng-if="collection.length <= 0"
@@ -21,7 +20,7 @@
               tr ng-repeat="obj in collection" ng-if="collection.length > 0"
                 td ng-bind="obj.title"
                 td ng-bind="obj.is_active ? 'Active' : 'Inactive'"
-                td ng-bind="obj.posted_date.formatDate()"
+                td ng-bind="obj.created_at.formatDate()"
                 td.action-th
                   .btn-group
                     a.btn.btn-default.btn-action href="/cms/posts/{{obj.id}}/edit"

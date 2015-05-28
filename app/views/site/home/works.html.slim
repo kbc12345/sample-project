@@ -1,0 +1,50 @@
+=render 'header'
+
+section#works-header
+
+sectin#works-intro
+  .map-icon-holder
+    i.icon.icon-laptop
+  .container
+    .row
+      .col-md-12.col-md-offset-2.text-center
+        h3 Our Works
+        p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a 
+
+section#works-content
+  .row
+    .col-md-12.col-md-offset-2.text-center
+      .categories
+        ul
+          li 
+            a.small.active href="#" data-filter="all" All
+          li 
+            a.small href="#" data-filter=".web" Web
+          li 
+            a href="#" data-filter=".mobile" Mobile
+
+section#work-items
+  -(1..3).each do |i|
+    .row.work-item-row
+      .col-md-4.col-md-offset-2.text-center
+        .work-item.mix.all 
+          .screen
+            .title.from-left
+              h3 SAMPLE PROJECT
+              span.description Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip
+
+      .col-md-4
+        .work-item.mix.mobile
+          .screen
+            .title.from-top 
+              h3 SAMPLE PROJECT
+              span.description Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip
+
+
+      .col-md-4
+        .work-item.mix.mobile
+          .screen
+            .title.from-left 
+              h3 SAMPLE PROJECT
+              span.description Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip
+

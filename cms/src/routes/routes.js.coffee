@@ -32,9 +32,12 @@ angular.module('cms').config [
         templateUrl: 'posts/index.html'
 
       .state 'cms.posts.edit',
-        url: '/{id:int}'
-        templateUrl: 'posts/index.html'
+        url: '/{id:int}/edit'
+        templateUrl: 'posts/edit.html'
  
+       .state 'cms.posts.new',
+        url: '/new'
+        templateUrl: 'posts/new.html'
 
 
   ]
