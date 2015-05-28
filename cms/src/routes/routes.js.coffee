@@ -16,7 +16,8 @@ angular.module('cms').config [
         url: '/login',
         controller: 'LoginController',
         templateUrl: 'login/index.html'
-
+        data:
+          unauthenticated: true
 
       .state 'cms.posts',
         url: '/posts',

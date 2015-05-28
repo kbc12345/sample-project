@@ -1,0 +1,33 @@
+.page-content ng-init="getList()"
+  .panel
+    .panel-heading
+      h2 Posts
+      a.btn.btn-primary.btn-plus.pull-right href="/cms/posts/new"
+        i.icon.icon-plus
+    .panel-body
+      .row
+        .col-md-12
+          table.table.table-hover
+            thead
+              tr
+                th Title
+                th Status
+                th Posted Date
+                th Author
+                th
+            tbody
+              tr ng-if="collection.length <= 0"
+                td colspan="4" No Records Found
+              tr ng-repeat="obj in collection" ng-if="collection.length > 0"
+                td ng-bind="obj.title"
+                td ng-bind="obj.is_active ? 'Active' : 'Inactive'"
+                td ng-bind="obj.posted_date.formatDate()"
+                td.action-th
+                  .btn-group
+                    a.btn.btn-default.btn-action href="/cms/posts/{{obj.id}}/edit"
+                      i.icon.icon-pencil
+                    a.btn.btn-danger.btn-action ng-click="delete(obj,$index)"
+                      i.icon.icon-trash-bin
+
+    .panel-footer
+      div(ng-pagination paginate-count="metadata.count" paginate-page="metadata.page" ng-if="paginated")

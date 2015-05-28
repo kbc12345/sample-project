@@ -8,5 +8,10 @@ class Site::HomeController < SiteController
   def contacts
   end
 
+  def works
+  end
+
+  def careers
+  end
 
 end

@@ -14,6 +14,9 @@ gem "devise"
 gem 'thin'
 gem 'will_paginate'
 gem 'unicorn'
+gem 'bcrypt'
+gem 'jbuilder', '~> 2.0'
+gem 'kaminari'
 gem 'rails_12factor', group: :production
 
 
@@ -35,6 +38,7 @@ gem 'rails-assets-ngSanitize'
 
 
 group :development do
+  gem 'pry-rails'
   gem 'capistrano', '~> 3.2.0', require: false
   gem 'capistrano-rails', '~> 1.1', require: false
   gem 'capistrano-bundler', '~> 1.1', require: false

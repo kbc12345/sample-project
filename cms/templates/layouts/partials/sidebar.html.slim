@@ -3,8 +3,15 @@
     li.logo
 
 
-    li
-      a href=""
-        i.icon.icon-settings-1
 
-    li(ng-logout)
+    li
+      a href="/cms/posts/"
+        i.icon.icon-book
+
+    li
+      a href="/cms/messages/"
+        i.icon.icon-chat
+
+    li
+      a ng-click="logout()"
+        i.icon.icon-sun

@@ -11,7 +11,7 @@
             ng-model="credentials.email"
             required="true"
             ng-class="{error: form.email.$error.required && form.$submitted}"
-            ng-enter="login(form)"
+            ng-enter="signin()"
             placeholder="Email")
 
         .form-group
@@ -21,9 +21,9 @@
             ng-model="credentials.password"
             required="true"
             ng-class="{error: form.password.$error.required && form.$submitted}"
-            ng-enter="login(form)"
+            ng-enter="signin()"
             placeholder="Password")
 
         .form-group
-          a.btn.btn-transparent.btn-block.text-left ng-click="login(form)" Log In
+          a.btn.btn-transparent.btn-block.text-left ng-click="signin()" ng-class="{disabled: disabledSubmit}" Log In
         

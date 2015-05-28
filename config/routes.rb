@@ -13,4 +13,11 @@ Rails.application.routes.draw do
   get 'cms' => 'cms#index'
   get 'cms/*path' => 'cms#index'
   
+
+  namespace :api, defaults: { format: 'json' } do
+    resource :session, only: %i(show create destroy)
+    resources :posts
+    resources :post_categories
+  end
+
 end

@@ -9,6 +9,6 @@ angular.module('cms').directive "cmsSidebar", ['Session','$state','localStorageS
         .then (data) ->
           localStorageService.remove('authToken')
           $rootScope.currentUser = null
-          $state.go("login")
+          $state.go("cms.login")
 
 ]

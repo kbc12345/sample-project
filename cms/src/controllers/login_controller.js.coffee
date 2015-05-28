@@ -8,13 +8,17 @@ angular.module('cms').controller 'LoginController',
     email: ""
     password: ""
 
-  $scope.login = ->
-    $scope.showLoading = true
+
+  $scope.signin = ->
+    $scope.disabledSubmit = true
+
     Session.login({credentials: $scope.credentials}).$promise
       .then (data) ->
         localStorageService.set('authToken', data.auth_token)
-        $state.go($scope.afterSuccessPath)
+        $state.go("cms.posts.index")
       .catch (err) ->
-        $scope.showLoading = false
+        $scope.disabledSubmit = false
+
+
 
 ]

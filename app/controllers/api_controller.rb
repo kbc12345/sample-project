@@ -1,10 +1,9 @@
 class ApiController < ApplicationController
 
   protect_from_forgery with: :null_session
-  before_action :set_request_details
   before_action :authenticate_request
 
-  helper_method :current_user,:search_query,:current_page,:permissions
+  helper_method :current_user,:search_query,:current_page,:permissions,:access_token
 
   class NotAuthenticatedError < StandardError; end
   rescue_from NotAuthenticatedError do
@@ -26,7 +25,11 @@ class ApiController < ApplicationController
 
 
   def current_user
-    @current_user ||= User.find_by(access_token: request.headers['Authorization'])
+    @current_user ||= User.find_by(access_token: access_token) if access_token
+  end
+
+  def access_token
+    @access_token ||=  request.headers['Authorization']
   end
 
 

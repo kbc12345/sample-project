@@ -9,7 +9,6 @@ cms = angular.module(
     'pasvaz.bindonce',
     'angular-growl',
     'LocalStorageModule',
-    'ui.select'
   ]
 )
 
@@ -53,10 +52,12 @@ cms.run ['$rootScope', '$location', '$state', '$window','$http','Session','User'
               if toState.data.authenticated
                 $state.go(toState.name, toParams)
               else if toState.data.unauthenticated
-                $state.go(ROOT_PATH)
+                $state.go("cms.posts.index")
 
             .catch (err) ->
+ 
               unless err.message == "transition prevented"
+                debugger
                 $rootScope.authenticatorFlag = true
                 localStorageService.remove('authToken')
                 $state.go("login")
@@ -64,7 +65,7 @@ cms.run ['$rootScope', '$location', '$state', '$window','$http','Session','User'
           if toState.data.unauthenticated
             $state.go(toState.name, toParams)
           else
-            $state.go("login")
+            $state.go("cms.login")
 
 
 

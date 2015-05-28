@@ -6,6 +6,7 @@ class Initial < ActiveRecord::Migration
       t.string :last_name
       t.string :email
       t.string :access_token
+      t.string :encrypted_password
     end
 
 
