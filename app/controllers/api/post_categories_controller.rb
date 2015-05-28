@@ -1,4 +1,4 @@
-class Api::V1::PostsController < ApiController
+class Api::PostsController < ApiController
   
   before_action :find_obj, except: [:index,:create]
 
