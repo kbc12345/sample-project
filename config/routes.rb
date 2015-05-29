@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get 'about', to: "site/home#about"
   get 'blogv2', to: "site/home#blogv2"
 
+  resource :messages, only: %i(create)
+
 
 
   ###########
