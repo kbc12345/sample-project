@@ -15,42 +15,62 @@ section#contact-form
   .container
     .row
       .col-md-6.col-md-offset-5
-        form#contactForm name="contactForm"
+        = form_for @message, remote: true do |f|
+          - if @message.errors.any?
+            #error_explanation
+              h2 = "#{pluralize(@message.errors.count, "error")} prohibited this high_score from being saved:"
+              ul
+                - @message.errors.full_messages.each do |message|
+                  li = message
+
+
           .form-group
-            input.form-control placeholder="Email"
+            = f.email_field :email, class: "form-control required", placeholder: "Contact", required: true
+
           .form-group
-            input.form-control placeholder="Name"
+            = f.text_field :sender, class: "form-control required", placeholder: "Name", required: true
+
           .form-group
-            textarea.form-control placeholder="Message" rows="4" height="300px" cols="50"
-          input.btn.btn-primary.btn-block type="submit"
+            = f.text_area :message, class: "form-control required", placeholder: "Message", required: true
           
-section#contact-info
+          a.btn.btn-primary.btn-block.btn-submit Submit
+          /=f.submit 'Submit', class: "btn btn-primary btn-block submit-btn"
 
+section#thank-you style="display: none;"
+  .container
     .row
-      .col-sm-8.left-info
-        .map-overlay
-          iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?zoom=16&center=14.5858%2C121.0593&key=AIzaSyATiNfGmX6571qzMYniC6U_QNLDFMCYUys"
-        .map-circle.left
+      .col-md-16.text-center
+        h5
+          |Thank you for contacting us.
+          br
+          |We'll get back to you as soon as possible.
 
-        .info-text
-          h4 MANILA
-          p 
-            |25 ADB Avenue, Suite 2701 
-            br
-            |Discovery Centre Building 
-            br
-            |Ortigas Center, Pasig City
-      .col-md-8.right-info
-        .map-overlay
-          iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?zoom=16&center=40.7051%2C-74.0100&key=AIzaSyATiNfGmX6571qzMYniC6U_QNLDFMCYUys"
-        .map-circle.right
-        
-        .info-text
-          h4 NEW YORK
-          p 
-            |64 Beaver Street Suite 203 
-            br
-            |New York, NY 10004
-            br
-            |(646) 583-2398
+section#contact-info
+  .row
+    .col-sm-8.left-info
+      .map-overlay
+        iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?zoom=16&center=14.5858%2C121.0593&key=AIzaSyATiNfGmX6571qzMYniC6U_QNLDFMCYUys"
+      .map-circle.left
+
+      .info-text
+        h4 MANILA
+        p 
+          |25 ADB Avenue, Suite 2701 
+          br
+          |Discovery Centre Building 
+          br
+          |Ortigas Center, Pasig City
+    .col-md-8.right-info
+      .map-overlay
+        iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?zoom=16&center=40.7051%2C-74.0100&key=AIzaSyATiNfGmX6571qzMYniC6U_QNLDFMCYUys"
+      .map-circle.right
+      
+      .info-text
+        h4 NEW YORK
+        p 
+          |64 Beaver Street Suite 203 
+          br
+          |New York, NY 10004
+          br
+          |(646) 583-2398
 
