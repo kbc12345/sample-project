@@ -12,39 +12,52 @@ sectin#works-intro
         p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a 
 
 section#works-content
-  .row
-    .col-md-12.col-md-offset-2.text-center
-      .categories
-        ul
-          li 
-            a.small.active href="#" data-filter="all" All
-          li 
-            a.small href="#" data-filter=".web" Web
-          li 
-            a href="#" data-filter=".mobile" Mobile
+  section#works-nav
+    .row
+      .col-md-12.col-md-offset-2.text-center
+        .categories
+          ul
+            li 
+              a.active.filter-works  href="#" data-filter="all" All
+            li 
+              a.filter-works href="#" data-filter="web" Web
+            li 
+              a.filter-works href="#" data-filter="mobile" Mobile
 
-section#work-items
-  -(1..3).each do |i|
-    .row.work-item-row
-      .col-md-4.col-md-offset-2.text-center
-        .work-item.mix.all 
-          .screen
-            .title.from-left
-              h3 SAMPLE PROJECT
-              span.description Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip
+  section#works-items
+    .all-row
+      -(1..2).each do |i|
+        =render 'sample_projects'
 
-      .col-md-4
-        .work-item.mix.mobile
-          .screen
-            .title.from-top 
-              h3 SAMPLE PROJECT
-              span.description Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip
+    .web-row style="display:none;"
+      -(1..1).each do |i|
+        =render 'sample_projects'
+
+    .mobile-row style="display:none;"
+      -(1..1).each do |i|
+        =render 'sample_projects'
+
+  section#works-details  style="display:none;"
+    .row
+      .col-md-offset-2.col-md-5
+        =image_tag('sample.jpg')
+      .col-md-7
+        .work-info
+          a.close-project-btn href="#"
+            i.icon.icon-cross
+          h2 Sample Work
+          a.website href="#" https://www.sample.com
+          p
+            | Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip
+            | Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip
+
+          p
+            | Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip
+            | Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip
 
 
-      .col-md-4
-        .work-item.mix.mobile
-          .screen
-            .title.from-left 
-              h3 SAMPLE PROJECT
-              span.description Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip
+          p
+            | Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip
+            | Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip
+
 
