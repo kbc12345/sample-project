@@ -26,7 +26,6 @@
   font-size: 13px
   -webkit-font-smoothing: antialiased
   +no-shadow
-
   display: block
   width: 100%
   height: 34px
@@ -38,11 +37,7 @@
   background-image: none
   border: 1px solid #F0F0F0
   border-radius: 1px
-
-  -webkit-transition: background-color ease-in-out .30, -webkit-box-shadow ease-in-out .30
-  -o-transition: background-color ease-in-out .30, box-shadow ease-in-out .30
-  transition: background-color ease-in-out .30, box-shadow ease-in-out .30
-
+  +transition(background-color ease-in-out .30)
 
 .form-control:focus
   outline: 0
@@ -50,13 +45,9 @@
   background-color: #EBEBEB
   -webkit-box-shadow: none
   box-shadow: none
-  
-
-input[type="file"]
-  line-height: 1
 
 label
-  font-weight: 200
+  font-weight: $light
 
 .disabled-input
   background-color: #eee
@@ -65,10 +56,10 @@ label
   display: block !important
   width: 95% !important
 
+input[type="file"]
+  line-height: 1
+
 input,textarea,select
   -webkit-appearance: none
 
-.error
-  border: 1px solid rgb(238, 115, 115)
 
-  

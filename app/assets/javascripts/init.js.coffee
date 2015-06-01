@@ -56,3 +56,16 @@ $(document).on "click", '.btn-submit', (event) ->
     $('#new_message').submit()
     $('#contact-form').fadeOut(200)
     $('#thank-you').delay(300).fadeIn()
+
+$(document).on "click", '.btn-apply', (event) ->
+  event.preventDefault()
+  modal = $('.modal')
+  body = $('body')
+
+  if modal.hasClass("open")
+    modal.removeClass("open")
+    body.removeClass("locked")
+  else
+    modal.addClass("open")
+    body.addClass("locked")
+    

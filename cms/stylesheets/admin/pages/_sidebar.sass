@@ -16,51 +16,54 @@
   .logo
     height: 34px
     background-color: $black
-  .menu
-    padding: 0px
-    margin: 0px
-    list-style: none
-    li
-      text-align: center
-      position: relative
-      a
-        @include transition(all 220ms ease-in-out)
-        color: $grey
-        text-decoration: none
-        display: block
-        padding: 13px 5px
-        border-bottom: 1px solid $light-grey
-        outline: 0!important
-        i
-          margin-right: 0
-          font-size: 16px
-        &:hover
-          color: $white
-      &.logo
-        height: 60px
-        border-bottom: 1px solid $light-grey
-      &.active
-        background: $black
-        i
-          color: $white
-
-      ul.sub-menu
-        display: none
-
-
+    h2
+      color: $grey
+      font-size: 30px
+.menu
+  padding: 0px
+  margin: 0px
+  list-style: none
+  li
+    text-align: center
+    position: relative
+    a
+      @include transition(all 220ms ease-in-out)
+      color: $grey
+      text-decoration: none
+      display: block
+      padding: 13px 5px
+      border-bottom: 1px solid $light-grey
+      outline: 0!important
+      i
+        margin-right: 0
+        font-size: 16px
       &:hover
-        ul.sub-menu
-          display: block
-          list-style: none
-          position: absolute
-          background: $black
-          width: 160px
-          top: 0
-          left: 100%
-          padding: 0px
-          li
-            a
-              font-size: 10px
-              text-align: left
-              padding: 10px
-              text-transform: uppercase
+        color: $white
+    &.logo
+      height: 60px
+      border-bottom: 1px solid $light-grey
+    &.active
+      background: $black
+      i
+        color: $white
+
+    ul.sub-menu
+      display: none
+
+
+    &:hover
+      ul.sub-menu
+        display: block
+        list-style: none
+        position: absolute
+        background: $black
+        width: 160px
+        top: 0
+        left: 100%
+        padding: 0px
+        li
+          a
+            font-size: 10px
+            text-align: left
+            padding: 10px
+            text-transform: uppercase

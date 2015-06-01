@@ -1,0 +1,70 @@
+.btn-close
+  color: $gray-light
+  font-size: 24px
+  text-decoration: none
+  position: relative 
+  right: 0px 
+  top: -10px
+  float: right
+  
+  &:hover
+    color: darken($gray-light, 10%)
+
+
+.modal
+  display: none
+  &:before
+    content: "" 
+    display: block
+    background: rgba(0,0,0,.6)
+    position: fixed
+    top: 0 
+    left: 0 
+    right: 0 
+    bottom: 0 
+    z-index: 10
+  &.open
+    display: block
+    
+
+.modal-dialog
+  background: #fefefe
+  border: $grey solid 1px
+  border-radius: 0px
+  position: fixed 
+  left: 25% 
+  top: 15%   
+  z-index: 11 
+  width: 640px
+  padding: 30px
+  border-radius: 4px
+  &.pushed-top
+    top: 5%
+
+
+.modal-body
+  padding: 20px 0
+
+
+.modal-header
+  border-bottom: $grey solid 1px
+  
+  h4
+    margin: 0px
+    font-weight: 400
+    font-size: 20px
+    margin: 0
+    margin-bottom: 15px
+    color: $black
+  
+
+.modal-footer
+  border-top: $grey solid 1px
+  text-align: right
+  padding-top: 15px
+
+.sweet-alert
+  border-radius: 0px
+  top: 40%
+  button
+    border-radius: 0px
