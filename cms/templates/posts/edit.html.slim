@@ -1,24 +1,3 @@
 .page-content ng-init="getObj()"
-  .panel
-    .panel-heading
-      h2 Posts
-      a.btn.btn-default.pull-right href="/cms/posts" Back
-    .panel-body
-
-      .form-group
-        label Title
-        input.form-control(
-          name="title"
-          type="text"
-          ng-model="obj.title"
-          required="true"
-          ng-class="{error: form.title.$error.required && form.$submitted}")
-
-      div(text-angular ng-model="post.content")
-
-    .panel-footer
-      .row
-        .col-md-12
-          .btn-group.pull-right
-            a.btn.btn-default href="/cms/posts" Back
-            a.btn.btn-green ng-click="update()" ng-class="{disabled: disabledSubmit}" Save
+  div(post-form)
+  div(category-modal)

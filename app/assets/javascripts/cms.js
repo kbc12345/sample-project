@@ -19,6 +19,7 @@
 //= require ../../../cms/src/vendor/textangular/textangular.js
 
 //= require ../../../cms/src/app
+//= require_tree ../../../cms/src/filters
 //= require_tree ../../../cms/src/properties
 //= require_tree ../../../cms/src/routes
 //= require_tree ../../../cms/src/config

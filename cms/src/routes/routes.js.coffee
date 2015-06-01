@@ -39,5 +39,17 @@ angular.module('cms').config [
         url: '/new'
         templateUrl: 'posts/new.html'
 
+      .state 'cms.messages',
+        url: '/messages',
+        controller: 'MessagesController',
+        templateUrl: 'messages/layout.html'
+        abstract: true
+        data:
+          authenticated: true
+
+      .state 'cms.messages.index',
+        url: '',
+        templateUrl: 'messages/index.html'
+
 
   ]

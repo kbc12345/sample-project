@@ -7,6 +7,7 @@ class Api::PostsController < ApiController
   end
 
   def show
+    @categories = PostCategory.all
   end
 
   def create

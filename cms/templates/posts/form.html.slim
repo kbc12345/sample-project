@@ -1,0 +1,73 @@
+.post-form
+  .panel
+    .panel-heading
+      h2 Posts
+    .panel-body
+      
+      .row
+        .col-md-6
+          .form-group
+            label Title
+            input.form-control(
+              name="title"
+              type="text"
+              ng-model="post.title"
+              required="true"
+              ng-class="{error: form.title.$error.required && form.$submitted}")
+
+        .col-md-6
+          .form-group
+            label Slug
+            input.form-control(
+              name="title"
+              type="text"
+              ng-model="post.slug"
+              required="true"
+              ng-class="{error: form.title.$error.required && form.$submitted}")
+          
+      .row
+        .col-md-6
+          .form-group
+            label Status
+            div(ng-active-select status="post.status" has-object="true")
+
+        .col-md-6
+          .form-group
+            label  Posted Date
+            input.form-control(
+              type="text" date-range-picker
+              ng-model="post.posted_date"
+              ranged="false"
+              blocked="true"
+            )
+
+      .row
+        .col-md-6
+          .form-group
+            label Categories
+            .select-form
+              ui-select ng-model="post.post_category_id" theme="selectize" ng-disabled="disabled"
+                ui-select-match placeholder="Select Item..." {{$select.selected.name}}
+                ui-select-choices repeat="obj in categories  | filter: $select.search"
+                  span ng-bind-html="obj.name| highlight: $select.search"
+              a.btn.btn-primary.btn-plus ng-click="toggleForm(null)"
+                i.icon.icon-plus
+
+  .panel
+    .panel-body
+      .form-group
+        label Excerpt
+        div(text-angular ng-model="post.excerpt")
+
+  .panel
+    .panel-body
+      .form-group
+        label Content
+        div(text-angular ng-model="post.content")
+
+    .panel-footer
+      .row
+        .col-md-12
+          .btn-group.pull-right
+            a.btn.btn-default href="/cms/posts" Back
+            a.btn.btn-green ng-click="save()" ng-class="{disabled: disabledSubmit}" Save

@@ -1,16 +1,16 @@
-class Api::PostsController < ApiController
+class Api::PostCategoriesController < ApiController
   
   before_action :find_obj, except: [:index,:create]
 
   def index
-    @collection = current_user.posts.search(search_query).page(current_page)
+    @collection = PostCategory.all
   end
 
   def show
   end
 
   def create
-    @obj = current_user.company.posts.new(obj_params)
+    @obj = PostCategory.new(obj_params)
     render_obj_errors unless @obj.save
   end
 
@@ -25,21 +25,13 @@ class Api::PostsController < ApiController
   private
 
   def find_obj
-    @obj = current_user.posts.find(params[:id])
+    @obj = PostCategory.find(params[:id])
   end
 
 
   def obj_params
-    params.require(:post).permit(*%i(
-      title
-      slug
-      excerpt
-      content
-      author
-      status
-      posted_date
-      post_category_id
-      tags
+    params.require(:post_category).permit(*%i(
+      name
     ))
   end
 

@@ -1,0 +1,28 @@
+.page-content ng-init="getList()"
+  .panel
+    .panel-heading
+      h2 Messages
+
+    .panel-body
+      .row
+        .col-md-12
+          table.table.table-hover
+            thead
+              tr
+                th Sender
+                th Contact
+                th Message
+                th Date
+                th.action-th-xs
+            tbody
+              tr ng-if="collection.length <= 0"
+                td colspan="4" No Records Found
+              tr ng-repeat="obj in collection" ng-if="collection.length > 0"
+                td ng-bind="obj.sender"
+                td ng-bind="obj.contact"
+                td ng-bind="obj.message"
+                td ng-bind="obj.created_at.formatDate()"
+                td
+                  a.btn.btn-danger.btn-action ng-click="delete(obj,$index)"
+                    i.icon.icon-trash-bin
+

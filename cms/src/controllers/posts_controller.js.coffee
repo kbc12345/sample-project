@@ -1,6 +1,6 @@
 angular.module('cms').controller 'PostsController',
-['$scope','$rootScope','Post','$state','$filter','growl'
-($scope,$rootScope,Post,$state,$filter,growl) ->
+['$scope','$rootScope','Post','$state','$filter','growl','Category'
+($scope,$rootScope,Post,$state,$filter,growl,Category) ->
 
   $rootScope.bodyClass = ""
   $scope.openModal = false
@@ -20,81 +20,57 @@ angular.module('cms').controller 'PostsController',
       .then (data) ->
         processData(data)
 
-  $scope.search = ->
-    $rootScope.startLoading()
-    $scope.paginated = false
-    $scope.searchParams = $scope.query
-    Post.getList(query: $scope.query).$promise
+    Category.getList().$promise
       .then (data) ->
-        processData(data)
-
-
-  $scope.toggleForm =(obj,index)->
-    if obj
-      $scope.obj =  angular.copy(obj)
-      $scope.objIndex = index
-    else
-      $scope.obj = new Post()
-      $scope.obj.is_active = true
-
-    $scope.openModal = !$scope.openModal
-    $scope.disabledSubmit = false
-
-  $scope.save =(form)->
-    form.$submitted = true
-    if form.$valid
-      $scope.disabledSubmit = true
-      if !$scope.obj.id
-        Post.save(unit_type: $scope.obj).$promise
-          .then (data) ->
-            $scope.obj.id = data.id
-            $scope.collection.unshift $scope.obj
-            if $scope.collection.length > 10
-              $scope.togglePagination()
-              $scope.collection.splice(10, 1)
-            growl.success(MESSAGE.SAVE_SUCCESS)
-            $scope.toggleForm(null)
-          .catch (err) ->
-            $scope.disabledSubmit = false
-      else
-        Post.update({id: $scope.obj.id},unit_type: $scope.obj).$promise
-          .then (data) ->
-            $scope.collection[$scope.objIndex] = $scope.obj
-            growl.success(MESSAGE.UPDATE_SUCCESS)
-            $scope.toggleForm(null)
-          .catch (err) ->
-            $scope.disabledSubmit = false
-    else
-      growl.error(MESSAGE.FORM_ERROR)
-
+        $scope.categories = data.collection
 
   $scope.newPost = ->
     $rootScope.stopLoading()
     $scope.post = 
       content: null
+      status: STATUS_COLLECTION[1]
+      excerpt: null
+      title: ""
+      posted_date: moment(new Date())
+
+    Category.getList().$promise
+      .then (data) ->
+        $scope.categories = data.collection
 
   $scope.getObj = ->
     Post.get(id: $state.params.id).$promise
       .then (data) ->
-        $scope.post = data
+        $scope.post = data.post
+        $scope.post.posted_date = moment($scope.post.posted_date)
+        $scope.categories = data.categories
+        $scope.post.post_category_id = findById($scope.post.post_category_id, $scope.categories)
         $rootScope.stopLoading()
       .catch (err) ->
         $state.go("cms.posts.index")
 
   $scope.save = ->
-    Post.save(post: $scope.post).$promise
+    obj = angular.copy $scope.post
+    obj.post_category_id = $scope.post.post_category_id.id
+
+    if !!$scope.post.id
+      $scope.update(obj)
+    else
+      $scope.create(obj)
+
+  $scope.create =(obj)->
+    Post.save(post: obj).$promise
       .then (data) ->
         growl.success(MESSAGE.SAVE_SUCCESS)
-        $state.go("cms.posts.index")
+        #$state.go("cms.posts.index")
       .catch (err) ->
         $scope.disabledSubmit = false
 
 
-  $scope.update = ->
-    Post.update({id: $scope.post.id}, post: $scope.post).$promise
+  $scope.update =(obj)->
+    Post.update({id: obj.id}, post: obj).$promise
       .then (data) ->
         growl.success(MESSAGE.UPDATE_SUCCESS)
-        $state.go("cms.posts.index")
+        #$state.go("cms.posts.index")
       .catch (err) ->
         $scope.disabledSubmit = false
 
@@ -115,5 +91,46 @@ angular.module('cms').controller 'PostsController',
 
   $scope.togglePagination =(count)->
     $scope.paginated  = if count > DEFAULT_PER_PAGE then true else false
+
+  $scope.toggleForm =(obj)->
+    if !!obj
+      $scope.post_category = angular.copy obj
+    else
+      $scope.post_category = new Category()
+
+    $scope.disabledSubmit = false
+    $scope.openModal = !$scope.openModal
+
+  $scope.saveCategory = (form) ->
+    form.$submitted = true
+    if form.$valid
+      $scope.disabledSubmit = true
+      if !$scope.post_category.id
+        Category.save(post_category: $scope.post_category).$promise
+          .then (data) ->
+            $scope.post_category.id = data.id
+            $scope.categories.unshift $scope.post_category
+            growl.success(MESSAGE.SAVE_SUCCESS)
+            $scope.toggleForm(null)
+          .catch (err) ->
+            $scope.disabledSubmit = false
+      else
+        Category.update({id: $scope.post_category.id},post_category: $scope.post_category).$promise
+          .then (data) ->
+            $scope.categories[$scope.objIndex] = $scope.post_category
+            growl.success(MESSAGE.UPDATE_SUCCESS)
+            $scope.toggleForm(null)
+          .catch (err) ->
+            $scope.disabledSubmit = false
+
+    else
+      growl.error(MESSAGE.FORM_ERROR)
+  
+  $scope.deleteCategory =(obj,index)->
+    swal deleteWarning, ->
+      $scope.categories.splice(index,1)
+      growl.success(MESSAGE.DELETE_SUCCESS)
+      Category.remove(id: obj.id)
+
 
 ]

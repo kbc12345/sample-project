@@ -1,0 +1,25 @@
+.modal.open ng-if="openModal"
+  form  name="form"
+    .modal-dialog
+      .modal-header
+        a.btn-close ng-click="toggleForm(null)" ×
+        h4 Category
+        
+      .modal-body
+        .form-group
+          label Name
+          label.danger *
+          input.form-control(
+            name="name"
+            type="text" 
+            ng-model="post_category.name"
+            required="true"
+            ng-class="{error: form.name.$error.required && form.$submitted}"
+            ng-enter="save(form)")
+
+      .modal-footer
+        .row
+          .col-md-12
+            .btn-group.pull-right
+              a.btn.btn-default ng-click="toggleForm(null)" Cancel
+              a.btn.btn-primary ng-click="saveCategory(form)" ng-class="{disabled: disabledSubmit}" Save

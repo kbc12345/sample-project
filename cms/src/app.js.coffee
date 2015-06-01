@@ -9,7 +9,9 @@ cms = angular.module(
     'pasvaz.bindonce',
     'angular-growl',
     'LocalStorageModule',
-    'textAngular'
+    'textAngular',
+    'ui.select',
+    'dateRangePicker'
   ]
 )
 
@@ -37,7 +39,6 @@ cms.run ['$rootScope', '$location', '$state', '$window','$http','Session','User'
       # this will happen if there is already a cookie
       # and if the user just refreshes the page
       # thus clearing the rootScope.currentUser
-
       if $rootScope.authenticatorFlag && toState.data isnt undefined &&(!!toState.data.authenticated || !!toState.data.unauthenticated)
         event.preventDefault()
 
@@ -58,9 +59,8 @@ cms.run ['$rootScope', '$location', '$state', '$window','$http','Session','User'
             .catch (err) ->
  
               unless err.message == "transition prevented"
-                debugger
                 $rootScope.authenticatorFlag = true
-                localStorageService.remove('authToken')
+                #localStorageService.remove('authToken')
                 $state.go("login")
         else
           if toState.data.unauthenticated

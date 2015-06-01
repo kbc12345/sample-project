@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     resource :session, only: %i(show create destroy)
     resources :posts
     resources :post_categories
+    resources :messages, only: %i(index destroy)
   end
 
 end

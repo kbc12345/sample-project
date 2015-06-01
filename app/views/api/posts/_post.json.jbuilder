@@ -5,4 +5,5 @@ json.extract! obj, *%i(
   posted_date
   id
   created_at
+  post_category_id
 )
