@@ -13,6 +13,7 @@ class Site::HomeController < SiteController
   end
 
   def careers
+    @applicant = Applicant.new
   end
 
 end

@@ -36,7 +36,8 @@ section#careers-content
             br
             |RSpec, unit testing and integration testing
 
-          a.btn.btn-primary.btn-apply href="#" Apply
+          .text-center
+            a.btn.btn-primary.btn-apply href="#" Apply
 
 
       .col-sm-5.col-sm-offset-2
@@ -58,14 +59,15 @@ section#careers-content
             br
             |Experience with APIs
 
-          a.btn.btn-primary.btn-apply href="#" Apply
+          .text-center
+            a.btn.btn-primary.btn-apply href="#" Apply
 
 
 #career-dash
 
 
 .modal 
-  form  name="form"
+  =form_for @applicant, :html => { :multipart => true }, remote: true do |f|
     .modal-dialog
       .modal-header
         a.btn-close.btn-apply href="#" ×
@@ -75,18 +77,29 @@ section#careers-content
         .form-group
           label Name
           label.danger *
-          input.form-control placeholder="Name"
+          =f.text_field :name, class: "form-control required", placeholder: "Name"
 
+
+        .form-group
+          label Email
+          label.danger *
+          =f.text_field :email, class: "form-control required", placeholder: "Email"
+        
 
         .form-group
           label Contact
           label.danger *
-          input.form-control placeholder="Contact"
-
+          =f.text_field :contact, class: "form-control required", placeholder: "Contact"
+        
+        .form-group
+          =f.file_field :resume
+          label for="applicant_resume"
+            a.btn-cv Upload CV
+       
 
 
       .modal-footer
         .row
           .col-md-16.pull-right
-            a.btn.btn-primary href="#" Submit
+            a.btn.btn-primary.btn-submit-applicant href="#" Submit
 

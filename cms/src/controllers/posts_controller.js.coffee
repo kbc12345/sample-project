@@ -50,7 +50,7 @@ angular.module('cms').controller 'PostsController',
 
   $scope.save = ->
     obj = angular.copy $scope.post
-    obj.post_category_id = $scope.post.post_category_id.id
+    obj.post_category_id = $scope.post.post_category_id.id if !!$scope.post.post_category_id
 
     if !!$scope.post.id
       $scope.update(obj)
@@ -131,6 +131,8 @@ angular.module('cms').controller 'PostsController',
       $scope.categories.splice(index,1)
       growl.success(MESSAGE.DELETE_SUCCESS)
       Category.remove(id: obj.id)
+
+
 
 
 ]

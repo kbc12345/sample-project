@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get 'blogv2', to: "site/home#blogv2"
 
   resource :messages, only: %i(create)
-
+  resource :applicants, only: %i(create)
 
 
   ###########

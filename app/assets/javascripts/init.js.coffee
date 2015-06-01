@@ -45,14 +45,7 @@ $(document).on "click", '#btn-nav-toggle', (event) ->
 
 $(document).on "click", '.btn-submit', (event) ->
   event.preventDefault()
-  hasError = false
-  $('.required').each (index, element) =>
-    if $(element).val().trim() == "" 
-      hasError = true 
-      $(element).addClass("error")
-    else
-      $(element).removeClass("error")
-  unless hasError
+  if isFormValid()
     $('#new_message').submit()
     $('#contact-form').fadeOut(200)
     $('#thank-you').delay(300).fadeIn()
@@ -68,4 +61,29 @@ $(document).on "click", '.btn-apply', (event) ->
   else
     modal.addClass("open")
     body.addClass("locked")
-    
+
+$(document).on "change", '#applicant_resume', (event) ->
+  event.preventDefault()
+  $('.btn-cv').html($('#applicant_resume')[0].files[0].name)
+
+
+$(document).on "click", '.btn-submit-applicant', (event) ->
+  event.preventDefault()
+  if isFormValid()
+    $('.btn-submit-applicant').html("Uploading..")
+    $('#new_applicant').submit()
+    $('.form-control').prop("disabled", true)
+
+
+
+
+isFormValid = ->
+  hasError = false
+  $('.required').each (index, element) =>
+    if $(element).val().trim() == "" 
+      hasError = true 
+      $(element).addClass("error")
+    else
+      $(element).removeClass("error")
+
+  !hasError

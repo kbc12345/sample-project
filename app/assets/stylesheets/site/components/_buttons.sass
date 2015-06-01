@@ -29,7 +29,7 @@
   &:focus
     text-decoration: none
 
-  +respond-to(0,$desktop-s)
+  +respond-to(0,$desktop-m)
     display: block
     color: $white
     text-decoration: none
@@ -44,5 +44,17 @@
 .btn-default
   +buttons($dark,$white)
   border: 1px solid #ADADAD
-  color: #333
+  color: $dark
   border-radius: 3px
+
+
+.btn-cv
+  padding: 50px
+  display: block
+  border: 1px dashed $dark
+  color: $dark
+  text-align: center
+  margin-top: 25px
+  text-decoration: none
+  cursor: pointer
+  border-radius: 2px
