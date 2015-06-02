@@ -70,7 +70,7 @@ $(document).on "change", '#applicant_resume', (event) ->
 $(document).on "click", '.btn-submit-applicant', (event) ->
   event.preventDefault()
   if isFormValid()
-    $('.btn-submit-applicant').html("Uploading..")
+    $('.btn-submit-applicant').html("Uploading..").addClass("disabled")
     $('#new_applicant').submit()
     $('.form-control').prop("disabled", true)
 
