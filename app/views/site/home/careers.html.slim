@@ -36,7 +36,7 @@ section#careers-content
             br
             |RSpec, unit testing and integration testing
 
-          .text-center
+          .career-btn-row
             a.btn.btn-primary.btn-apply href="#" Apply
 
 
@@ -59,7 +59,7 @@ section#careers-content
             br
             |Experience with APIs
 
-          .text-center
+          .career-btn-row
             a.btn.btn-primary.btn-apply href="#" Apply
 
 
@@ -83,23 +83,19 @@ section#careers-content
         .form-group
           label Email
           label.danger *
-          =f.text_field :email, class: "form-control required", placeholder: "Email"
+          =f.text_field :email, class: "form-control required email", placeholder: "Email"
         
 
         .form-group
-          label Contact
-          label.danger *
-          =f.text_field :contact, class: "form-control required", placeholder: "Contact"
-        
-        .form-group
           =f.file_field :resume
           label for="applicant_resume"
-            a.btn-cv Upload CV
+            a.btn-cv 
+              |Upload CV
        
 
 
       .modal-footer
         .row
-          .col-md-16.pull-right
+          .col-md-16ow
             a.btn.btn-primary.btn-submit-applicant href="#" Submit
 

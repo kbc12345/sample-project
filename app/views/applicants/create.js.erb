@@ -1,1 +1,6 @@
-alert("fakkk");
+modal = $('.modal');
+body = $('body');
+modal.removeClass("open");
+body.removeClass("locked");
+$('.btn-submit-applicant').html("Submit")
+$.growl.notice({ title: "", message: "Thank you for submitting your application.<br> We'll get back to you as soon as possible." })

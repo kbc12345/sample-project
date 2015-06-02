@@ -76,14 +76,29 @@ $(document).on "click", '.btn-submit-applicant', (event) ->
 
 
 
+isEmail =(email)->
+  re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+  re.test(email);
 
 isFormValid = ->
-  hasError = false
+  requiredError = false
+  emailError = false
   $('.required').each (index, element) =>
+
     if $(element).val().trim() == "" 
-      hasError = true 
+      requiredError = true 
+      $(element).addClass("error")
+    else if $(element).hasClass("email") && !isEmail(element.value)
+      emailError = true
       $(element).addClass("error")
     else
       $(element).removeClass("error")
 
-  !hasError
+  if requiredError
+    $.growl.error({ title: "", message: "Marked Fields are required" })
+    return false
+  else if emailError
+    $.growl.error({ title: "", message: "Marked Field must be an email" })
+    return false
+  else
+    return true

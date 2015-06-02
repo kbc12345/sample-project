@@ -52,4 +52,16 @@ angular.module('cms').config [
         templateUrl: 'messages/index.html'
 
 
+      .state 'cms.applicants',
+        url: '/applicants',
+        controller: 'ApplicantsController',
+        templateUrl: 'applicants/layout.html'
+        abstract: true
+        data:
+          authenticated: true
+
+      .state 'cms.applicants.index',
+        url: '',
+        templateUrl: 'applicants/index.html'
+
   ]

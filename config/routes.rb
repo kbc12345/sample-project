@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     resources :posts
     resources :post_categories
     resources :messages, only: %i(index destroy)
+    resources :applicants, only: %i(index destroy)
   end
 
 end

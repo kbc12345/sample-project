@@ -32,8 +32,9 @@
   border: $grey solid 1px
   border-radius: 0px
   position: fixed 
-  left: 25% 
-  top: 15%   
+  margin-left: -300px
+  left: 50%
+  top: 5%   
   z-index: 11 
   width: 640px
   padding: 30px
@@ -68,3 +69,16 @@
   top: 40%
   button
     border-radius: 0px
+
+.btn-submit-applicant
+  float: right
+
++respond-to(0,730px)
+  .modal-dialog
+    width: 90%
+    left: 5%
+    margin-left: 0px
+  .btn-submit-applicant
+    display: block
+    width: 100%
+    float: inherit

@@ -1,3 +1,22 @@
+.blog-topbar
+  .container
+    .row
+      .col-md-offset-1.col-md-10
+        ul
+          li
+            a.animate-anchor href="/about" ABOUT US
+          li
+            a href="/works" OUR WORK
+          li
+            a href="/careers" CAREERS
+
+          li
+            a href="/contacts" CONTACTS
+
+      .col-md-4
+        .search-form-group
+          input.form-control placeholder="Search"
+          i.icon.icon-search
 
 .blog-header
   a href="/"
@@ -12,17 +31,19 @@
   .container
     -(1..7).each do |i|
       .row
-        .col-md-offset-4.col-md-8
+        .col-md-offset-3.col-md-10
           .blog-entry
             .blog-info
               a href="#"
-                h4.title Lorem Ipsum Sample Title
+                h2.title Lorem Ipsum Sample Title
               span By
               span.author Sam Piggot
               | - 
               span.date May 27, 2015
             .blog-excerpt
               p 
+                |Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
+                |Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
                 |Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
                 |Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
 
