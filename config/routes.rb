@@ -21,7 +21,11 @@ Rails.application.routes.draw do
   ###########
   # BLOG
   ###########
-  resources :blog, only: %i(show index)
+  resources :blog, only: %i(show index) do
+    collection do
+      get :search
+    end
+  end
   
 
   ###########

@@ -7,73 +7,13 @@
   a 
     color: $blog-primary
     text-decoration: none
-    font-family: 'effra'
+    font-family: 'effra', sans-serif
     &:hover
       text-decoration: none
       color: $blue
 
   h1,h2,h3,h4,h5
     font-family: "kepler-std", sans-serif
-
-  .blog-header
-    text-align: center
-    margin: 50px 0px 30px 0px
-    img
-      width: 250px
-    h5
-      font-family: 'effra'
-
-  .blog-entries
-    
-    margin: 50px 0px 30px 0px
-
-    .title
-      margin: 5px 0px 15px 0px
-      color: $blue
-
-    .author,.date
-      margin: 0px 5px
-
-    .blog-excerpt
-      margin-top: 15px
-      text-align: left
-
-  .blog-entry
-    border-top: 1px solid $grey 
-    padding: 30px 0px
-
-
-  .blog-footer
-    margin-bottom: 40px
-    text-align: center
-    a.btn-home
-      font-size: 30px
-      padding: 20px 23px
-      background-color: #E5E5E5
-      border-radius: 50%
-      color: #333
-
-  .blog-info
-    font-size: 1.3em
-    text-align: center
-
-  .btn-default
-    color: $dark
-
-  .footer-links
-    margin-top: 50px
-    text-align: left
-    list-style: none
-    border-top: 1px solid $grey
-    ul
-      padding: 0px
-      margin: 20px 0px 1px 0px
-    li
-      display: inline-block
-      margin-right: 15px
-      a
-        text-style: italic
-
 
 
 
@@ -88,7 +28,50 @@
       color: $white
       border-color: $blue
 
+  .footer-links
+    margin-top: 50px
+    text-align: center
+    list-style: none
+    border-top: 1px solid $grey
+    font-family: 'effra', sans-serif
+    ul
+      padding: 0px
+      margin: 20px 0px 1px 0px
+      li
+        display: inline-block
+        margin-right: 15px
+        a
+          text-style: italic
 
+.blog-header
+  text-align: center
+  margin: 50px 0px 30px 0px
+  img
+    width: 250px
+  h5
+    font-family: 'effra'
+
+.blog-info
+  font-size: 1.3em
+  text-align: center
+
+
+.blog-entry
+  border-top: 1px solid $grey 
+  padding: 30px 0px
+  &.no-border
+    border: 0px
+
+
+.blog-footer
+  margin-bottom: 40px
+  text-align: center
+  a.btn-home
+    font-size: 30px
+    padding: 20px 23px
+    background-color: #E5E5E5
+    border-radius: 50%
+    color: #333
 
 .blog-topbar
   background-color: #FBFBFB
@@ -103,26 +86,17 @@
       margin-right: 30px
       display: inline-block
 
-#blogv2
-  margin: 30px 0px
+.blog-entries
+  margin: 50px 0px 30px 0px
 
-  .blog-entries
-    margin: 20px 0px 50px 0px
-
+.blog-info
   .title
-    margin: 5px 0px
-
+    margin: 5px 0px 15px 0px
+    color: $blue
 
   .author,.date
     margin: 0px 5px
 
   .blog-excerpt
-    margin: 15px 0px
-    text-align: justify
-
-  .blog-entry
-    border-top: 1px solid $grey 
-    border-bottom: 1px solid $grey 
-    padding: 20px 0px
-    &.no-border
-      border: 0px
+    margin-top: 15px
+    text-align: left

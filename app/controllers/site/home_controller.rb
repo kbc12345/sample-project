@@ -5,6 +5,9 @@ class Site::HomeController < SiteController
 
   end
 
+  def about
+  end
+  
   def contacts
     @message = Message.new
   end

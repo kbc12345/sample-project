@@ -12,6 +12,13 @@
   -ms-transition: all 0.3s ease-in-out
   transition: all 0.3s ease-in-out
 
+=blur($sec)
+  -webkit-transition: background-color $sec ease
+  -moz-transition: background-color $sec ease
+  -o-transition: background-color $sec ease
+  -ms-transition: background-color $sec ease
+  transition: background-color $sec ease
+
 =transition-delay($sec)
   transition-duration: $sec
   -webkit-transition-duration: $sec

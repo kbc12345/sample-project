@@ -26,8 +26,9 @@ css:
 
 #page-wrapper
   #blog-wrapper
+    =render 'blog/topbar'
     = yield
-    /=render 'site/home/footer'
+    =render 'blog/footer'
 
 script src="//use.typekit.net/sia2sla.js"
 script try{Typekit.load();}catch(e){}

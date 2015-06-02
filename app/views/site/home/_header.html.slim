@@ -4,14 +4,14 @@
       =image_tag('logo.png')
     ul#navigation
       li
-        a.animate-anchor href="/about" ABOUT US
+        a class="#{is_active('about')}" href="/about" ABOUT US
       li
-        a href="/works" OUR WORK
+        a class="#{is_active('works')}" href="/works" OUR WORK
       li
-        a href="/careers" CAREERS
+        a class="#{is_active('careers')}" href="/careers" CAREERS
 
       li
-        a href="/contacts" CONTACTS
+        a class="#{is_active('contacts')}" href="/contacts" CONTACTS
       li
         a href="#"
           i.icon.icon-facebook
