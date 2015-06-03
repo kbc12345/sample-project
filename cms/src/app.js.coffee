@@ -60,7 +60,7 @@ cms.run ['$rootScope', '$location', '$state', '$window','$http','Session','User'
  
               unless err.message == "transition prevented"
                 $rootScope.authenticatorFlag = true
-                #localStorageService.remove('authToken')
+                localStorageService.remove('authToken')
                 $state.go("login")
         else
           if toState.data.unauthenticated
