@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
   private
 
   def update_slug
-    self.slug = self.id.to_s+"-"+self.slug.parameterize
+    self.slug = self.id.to_s+"-"+self.title.parameterize
   end
 
 end

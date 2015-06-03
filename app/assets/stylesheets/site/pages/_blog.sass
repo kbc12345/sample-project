@@ -1,4 +1,4 @@
-#blog-wrapper
+.blog-wrapper
 
   p
     font-size: 1.3em
@@ -7,14 +7,11 @@
   a 
     color: $blog-primary
     text-decoration: none
-    font-family: 'effra', sans-serif
+    font-family: "acta-display", sans-serif
+    font-size: 14px
     &:hover
-      text-decoration: none
+      text-decoration: underline
       color: $blue
-
-  h1,h2,h3,h4,h5
-    font-family: "kepler-std", sans-serif
-
 
 
   .btn-blue
@@ -45,7 +42,7 @@
 
 .blog-header
   text-align: center
-  margin: 50px 0px 30px 0px
+  margin-top: 30px
   img
     width: 250px
   h5
@@ -85,14 +82,21 @@
     li
       margin-right: 30px
       display: inline-block
+      &:last-child
+        margin-right: 0px
+      a
+        text-transform: uppercase
 
 .blog-entries
-  margin: 50px 0px 30px 0px
+  margin-top: 30px
 
 .blog-info
   .title
+    color: #444444
+    font-family: "acta-display", sans-serif
     margin: 5px 0px 15px 0px
-    color: $blue
+    &:hover
+      color: $blue
 
   .author,.date
     margin: 0px 5px
@@ -102,8 +106,11 @@
     text-align: left
 
 .blog-post
-  border-bottom: 1px solid #F0F0F0
+  //border-bottom: 1px solid #F0F0F0
   padding-bottom: 40px
+
+.blog-excerpt
+  margin-top: 15px
 
 .suggested-post-container
   margin-top: 40px
@@ -115,3 +122,10 @@
   li
     border-bottom: 1px solid #E9E9E9
     padding: 10px 0px
+
+
++respond-to(0,992px)
+  .topbar-links
+    text-align: center
+  .blog-topbar ul
+    margin-bottom: 10px
