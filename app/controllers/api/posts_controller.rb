@@ -11,7 +11,7 @@ class Api::PostsController < ApiController
   end
 
   def create
-    @obj = Post.new(obj_params)
+    @obj = current_user.posts.new(obj_params)
     render_obj_errors unless @obj.save
   end
 

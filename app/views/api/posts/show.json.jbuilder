@@ -2,7 +2,7 @@ json.post do
   json.extract! @obj, *%i(
     title
     status
-    author
+    user_id
     posted_date
     id
     created_at

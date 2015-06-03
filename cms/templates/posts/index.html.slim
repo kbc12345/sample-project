@@ -19,7 +19,7 @@
                 td colspan="4" No Records Found
             tr ng-repeat="obj in collection" ng-if="collection.length > 0"
                 td ng-bind="obj.title"
-                td ng-bind="obj.is_active ? 'Active' : 'Inactive'"
+                td ng-bind="obj.status == 1 ? 'Active' : 'Inactive'"
                 td ng-bind="obj.posted_date.formatDate()"
                 td.action-th
                   .btn-group

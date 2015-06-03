@@ -1,23 +1,20 @@
 class BlogController < ApplicationController
 
-  before_action :find_post, only: :show
+ # before_action :find_post, only: :show
 
   layout 'blog'
   
   def index
+    @posts = Post.index_details
   end
 
   def show
-    
+    @post = Post.show_details(params[:id].split('-')[0])
   end
 
   def search
   end
 
-  private
 
-  def find_post
-    @post = Post.find(params[:id].split('-')[0])
-  end
   
 end

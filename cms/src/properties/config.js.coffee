@@ -4,11 +4,11 @@
 @STATUS_COLLECTION= [
   {
     label: 'Active'
-    value: true
+    value: 1
   }
   {
     label: 'Inactive'
-    value: false
+    value: 2
   }
 
 ]

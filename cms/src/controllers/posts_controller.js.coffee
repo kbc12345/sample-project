@@ -61,7 +61,7 @@ angular.module('cms').controller 'PostsController',
     Post.save(post: obj).$promise
       .then (data) ->
         growl.success(MESSAGE.SAVE_SUCCESS)
-        $state.go("cms.posts.index")
+        #$state.go("cms.posts.index")
       .catch (err) ->
         $scope.disabledSubmit = false
 
@@ -70,7 +70,7 @@ angular.module('cms').controller 'PostsController',
     Post.update({id: obj.id}, post: obj).$promise
       .then (data) ->
         growl.success(MESSAGE.UPDATE_SUCCESS)
-        $state.go("cms.posts.index")
+        #$state.go("cms.posts.index")
       .catch (err) ->
         $scope.disabledSubmit = false
 

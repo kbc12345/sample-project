@@ -14,16 +14,17 @@
       color: $blue
 
 
-  .btn-blue
+  .btn-default
     padding: 10px 20px
     border: 1px solid #D9D9D9
     border-radius: 3px
     color: #7E7E7E
     +btn-transition
     &:hover
-      background-color: $blue
+      background-color: #555555
       color: $white
-      border-color: $blue
+      border-color: #555555
+      text-decoration: none
 
   .footer-links
     margin-top: 50px
@@ -48,16 +49,14 @@
   h5
     font-family: 'effra'
 
-.blog-info
-  font-size: 1.3em
-  text-align: center
-
 
 .blog-entry
   border-top: 1px solid $grey 
   padding: 30px 0px
   &.no-border
     border: 0px
+  p
+    margin-bottom: 20px
 
 
 .blog-footer
@@ -71,13 +70,13 @@
     color: #333
 
 .blog-topbar
-  background-color: #FBFBFB
+  text-align: center
+  background-color: $white
   border-bottom: 1px solid #F0F0F0
   width: 100%
-  padding: 12px 0px 10px 0px
   ul
     list-style: none
-    margin: 7px 0px 0px 0px
+    margin: 15px 0px
     padding: 0px
     li
       margin-right: 30px
@@ -86,17 +85,25 @@
         margin-right: 0px
       a
         text-transform: uppercase
+        i
+          font-size: 16px
+          vertical-align: middle
+   
 
 .blog-entries
   margin-top: 30px
 
 .blog-info
+  font-size: 1.3em
+  text-align: center
   .title
-    color: #444444
+    color: #444
     font-family: "acta-display", sans-serif
     margin: 5px 0px 15px 0px
     &:hover
       color: $blue
+    &.no-hover:hover
+      color: #444
 
   .author,.date
     margin: 0px 5px
@@ -106,8 +113,17 @@
     text-align: left
 
 .blog-post
-  //border-bottom: 1px solid #F0F0F0
   padding-bottom: 40px
+  p
+    margin-bottom: 20px
+    font-size: 20px
+  a
+    font-size: 20px
+    color: $blue
+    text-decoration: underline
+    &:hover
+      text-decoration: none
+
 
 .blog-excerpt
   margin-top: 15px
@@ -122,6 +138,8 @@
   li
     border-bottom: 1px solid #E9E9E9
     padding: 10px 0px
+
+
 
 
 +respond-to(0,992px)

@@ -1,4 +1,4 @@
-$(document).ready ->
+$(document).on 'ready page:load', ->
 
   #fastlick
   FastClick.attach(document.body)
@@ -24,6 +24,17 @@ $(document).ready ->
     $("#landing-text").css("margin-top", relativeHeight-textOffset)
     $("#pull-btn-section").css("margin-top", relativeHeight-playOffset)
     $("#dash").css("top", $(window).height()-65)
+
+$(document).on 'page:fetch', ->
+  NProgress.start()
+  return
+$(document).on 'page:change', ->
+  NProgress.done()
+  return
+$(document).on 'page:restore', ->
+  NProgress.remove()
+  return
+
 
 $(document).on "click", '.animate-anchor', (event) ->
   event.preventDefault()

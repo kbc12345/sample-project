@@ -8,25 +8,21 @@
 
 .blog-entries
   .container
-    -(1..7).each do |i|
+    -@posts.each do |post|
       .row
         .col-md-offset-3.col-md-10
           .blog-entry
             .blog-info
-              a href="/blog/12"
-                h2.title Lorem Ipsum Sample Title
+              a href="/blog/#{post.slug}"
+                h2.title =post.title
               span By
-              span.author Sam Pigott
+              span.author =post.author
               | - 
-              span.date May 27, 2015
+              span.date =format_date post.posted_date
             .blog-excerpt
               p 
-                |Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
-                |Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
-                |Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
-                |Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
-
+                =raw post.excerpt
 
 .row
   .col-md-offset-4.col-md-8.text-center
-    a.btn.btn-blue href="#" More Stories
+    a.btn.btn-default href="#" More Stories

@@ -19,7 +19,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'kaminari'
 gem 'rails_12factor', group: :production
 gem 'remotipart', '~> 1.2'
-
+gem 'turbolinks'
 
 #angular libs
 gem 'bourbon'
