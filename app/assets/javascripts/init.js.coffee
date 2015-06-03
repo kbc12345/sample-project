@@ -109,7 +109,7 @@ isFormValid = ->
     $.growl.error({ title: "", message: "Marked Fields are required" })
     return false
   else if emailError
-    $.growl.error({ title: "", message: "Marked Field must be an email" })
+    $.growl.error({ title: "", message: "Marked Field must be an Email" })
     return false
   else
     return true

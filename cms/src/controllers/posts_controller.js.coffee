@@ -58,19 +58,19 @@ angular.module('cms').controller 'PostsController',
       $scope.create(obj)
 
   $scope.create =(obj)->
+    growl.success(MESSAGE.SAVE_SUCCESS)
     Post.save(post: obj).$promise
       .then (data) ->
-        growl.success(MESSAGE.SAVE_SUCCESS)
-        #$state.go("cms.posts.index")
+        $state.go("cms.posts.index")
       .catch (err) ->
         $scope.disabledSubmit = false
 
 
   $scope.update =(obj)->
+    growl.success(MESSAGE.UPDATE_SUCCESS)
     Post.update({id: obj.id}, post: obj).$promise
       .then (data) ->
-        growl.success(MESSAGE.UPDATE_SUCCESS)
-        #$state.go("cms.posts.index")
+        $scope.disabledSubmit = false
       .catch (err) ->
         $scope.disabledSubmit = false
 
