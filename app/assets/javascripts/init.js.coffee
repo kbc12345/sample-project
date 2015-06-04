@@ -21,9 +21,12 @@ $(document).on 'ready page:load', ->
       textOffset = 130
       playOffset =  250
 
+
     $("#landing-text").css("margin-top", relativeHeight-textOffset)
     $("#pull-btn-section").css("margin-top", relativeHeight-playOffset)
     $("#dash").css("top", $(window).height()-65)
+    dashHeight = $('#customers').offset().top-$('#btn-play').offset().top
+    $('#dash').css("height", dashHeight-90)
 
 $(document).on 'page:fetch', ->
   NProgress.start()
