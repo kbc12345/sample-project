@@ -1,0 +1,20 @@
+.page-wrapper
+  div(cms-sidebar)
+  
+  .content-wrapper
+    div(cms-header)
+    .page-content ng-init="getObj()"
+
+      .panel
+        .panel-heading
+          h2 Terms
+        .panel-body
+          .form-group
+            label Content
+            div(text-angular ng-model="terms.content")
+
+        .panel-footer
+          .row
+            .col-md-12
+              .btn-group.pull-right
+                a.btn.btn-green ng-click="save()" ng-class="{disabled: disabledSubmit}" Save

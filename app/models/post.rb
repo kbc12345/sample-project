@@ -8,6 +8,8 @@ class Post < ActiveRecord::Base
     users.last_name
     posts.posted_date
     posts.excerpt
+    posts.featured
+    posts.order
   )
 
 
@@ -18,6 +20,8 @@ class Post < ActiveRecord::Base
     users.last_name
     posts.posted_date
     posts.content
+    posts.featured
+    posts.order
   )
 
 

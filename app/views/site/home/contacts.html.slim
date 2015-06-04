@@ -1,7 +1,9 @@
 =render 'header'
 
 section#contact-header
-
+  .header-logo
+    =image_tag 'logo.png'
+    
 sectin#contact-intro
   .map-icon-holder
     i.icon.icon-map
@@ -33,7 +35,7 @@ section#contact-form
           .form-group
             = f.text_area :message, class: "form-control required", placeholder: "Message", required: true
           
-          a.btn.btn-primary.btn-block.btn-submit Submit
+          a.btn.btn-primary.btn-block.btn-submit href="#" Submit
           /=f.submit 'Submit', class: "btn btn-primary btn-block submit-btn"
 
 section#thank-you style="display: none;"

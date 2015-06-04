@@ -101,6 +101,10 @@ angular.module('cms').controller 'PostsController',
     $scope.disabledSubmit = false
     $scope.openModal = !$scope.openModal
 
+  $scope.feature =(obj) ->
+    obj.featured = !obj.featured
+    Post.update({id: obj.id}, post: obj).$promise
+
   $scope.saveCategory = (form) ->
     form.$submitted = true
     if form.$valid
@@ -132,6 +136,15 @@ angular.module('cms').controller 'PostsController',
       growl.success(MESSAGE.DELETE_SUCCESS)
       Category.remove(id: obj.id)
 
+  $scope.moveDown =(obj,index) ->
+    if index+1 < $scope.collection.length
+      $scope.collection.splice(index,1)
+      $scope.collection.splice(index+1,0,obj)
+
+  $scope.moveUp =(obj,index) ->
+    if index != 0
+      $scope.collection.splice(index,1)
+      $scope.collection.splice(index-1,0,obj)
 
 
 

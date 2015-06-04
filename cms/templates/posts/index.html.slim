@@ -1,6 +1,6 @@
 .page-content ng-init="getList()"
   .row
-    .col-md-8
+    .col-md-9
       .panel
         .panel-heading
           h2 Posts
@@ -10,6 +10,7 @@
           table.table.table-hover
             thead
               tr
+                th
                 th Title
                 th Status
                 th Posted Date
@@ -17,12 +18,20 @@
             tbody
               tr ng-if="collection.length <= 0"
                 td colspan="4" No Records Found
-            tr ng-repeat="obj in collection" ng-if="collection.length > 0"
+              tr ng-repeat="obj in collection" ng-if="collection.length > 0"
+                td
+                  .btn-group
+                    a.btn.btn-default.btn-action ng-click="moveUp(obj,$index)"
+                      i.fa.fa-arrow-up
+                    a.btn.btn-default.btn-action ng-click="moveDown(obj,$index)"
+                      i.fa.fa-arrow-down
                 td ng-bind="obj.title"
                 td ng-bind="obj.status == 1 ? 'Active' : 'Inactive'"
                 td ng-bind="obj.posted_date.formatDate()"
-                td.action-th
+                td.action-th-md
                   .btn-group
+                    a.btn.btn-primary.btn-action ng-click="feature(obj)"
+                      i.fa ng-class="obj.featured ? 'fa-star' : 'fa-star-o'"
                     a.btn.btn-default.btn-action href="/cms/posts/{{obj.id}}/edit"
                       i.icon.icon-pencil
                     a.btn.btn-danger.btn-action ng-click="delete(obj,$index)"
@@ -31,7 +40,7 @@
         .panel-footer
           div(ng-pagination paginate-count="metadata.count" paginate-page="metadata.page" ng-if="paginated")
 
-    .col-md-4
+    .col-md-3
       .panel
         .panel-heading
           h2 Categories

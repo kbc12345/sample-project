@@ -1,9 +1,25 @@
+html
+  height: 100%
+  width: 100%
 body
   color: $dark
   font-family: $primary-font
   background-color: $dark-grey
   font-size: 14px
   overflow-x: hidden
+  height: 100%
+  width: 100%
+  &.billing
+    background: image-url('acquired.jpg') no-repeat center center 
+    position: relative
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+    background-position-y: 0px
+    height: 100%
+    width: 100%
+    
 
 h1,h2,h3
   font-family: $primary-font
@@ -17,7 +33,7 @@ h3
   font-size: 20px
 
 a
-  color: $black
+  color: $primary
   outline:none
   text-decoration: none
   // +linear-transition

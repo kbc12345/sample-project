@@ -11,7 +11,8 @@ cms = angular.module(
     'LocalStorageModule',
     'textAngular',
     'ui.select',
-    'dateRangePicker'
+    'dateRangePicker',
+    'angular-sortable-view'
   ]
 )
 

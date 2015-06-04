@@ -41,6 +41,8 @@ class Api::PostsController < ApiController
       posted_date
       post_category_id
       tags
+      featured
+      order
     ))
   end
 

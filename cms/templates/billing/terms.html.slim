@@ -1,0 +1,9 @@
+.modal.modal-terms
+  .modal-dialog
+    .modal-header.text-center
+      h4 Terms of Service
+    .modal-body
+      p (ng-bind-html="terms.content")
+      
+      .text-center
+        a.btn.btn-primary ng-click="terms.openModal = false" Close

@@ -1,0 +1,160 @@
+form name="form"
+  .row
+    .col-md-6
+      .form-group
+        label Full Name (as appears on credit card)
+        label.danger *
+        input.form-control(
+          name="fullname"
+          type="text"
+          ng-model="billing.fullname"
+          required="true"
+          ng-class="{error: form.fullname.$error.required && form.$submitted}")
+
+    .col-md-6
+      .form-group
+        label Credit Card Type(visa, mc, amex, discover, etc.)
+        label.danger *
+        input.form-control(
+          name="card_type"
+          type="text"
+          ng-model="billing.card_type"
+          required="true"
+          ng-class="{error: form.card_type.$error.required && form.$submitted}")
+
+  .row
+    .col-md-6
+      .form-group
+        label Card Number
+        label.danger *
+        input.form-control(
+          name="card_number"
+          type="text"
+          ng-model="billing.card_number"
+          required="true"
+          ng-class="{error: form.card_number.$error.required && form.$submitted}")
+
+    .col-md-6
+      .form-group
+        label Expiration Date(mm/yy)
+        label.danger *
+        input.form-control(
+          name="exp_date"
+          type="text"
+          ng-model="billing.exp_date"
+          required="true"
+          ng-class="{error: form.exp_date.$error.required && form.$submitted}")
+
+
+  .row
+    .col-md-6
+      .form-group
+        label CVV number (security code) 
+        label.danger *
+        input.form-control(
+          name="cvv"
+          type="text"
+          ng-model="billing.cvv"
+          required="true"
+          ng-class="{error: form.cvv.$error.required && form.$submitted}")
+
+  hr
+
+  .row
+    .col-md-6
+      .form-group
+        label Company 
+        label.danger *
+        input.form-control(
+          name="company"
+          type="text"
+          ng-model="billing.company"
+          required="true"
+          ng-class="{error: form.company.$error.required && form.$submitted}")
+
+
+    .col-md-6
+      .form-group
+        label Address 
+        label.danger *
+        input.form-control(
+          name="address"
+          type="text"
+          ng-model="billing.address"
+          required="true"
+          ng-class="{error: form.address.$error.required && form.$submitted}")
+
+
+  .row
+    .col-md-6
+      .form-group
+        label State 
+        label.danger *
+        input.form-control(
+          name="state"
+          type="text"
+          ng-model="billing.state"
+          required="true"
+          ng-class="{error: form.state.$error.required && form.$submitted}")
+
+
+    .col-md-6
+      .form-group
+        label City 
+        label.danger *
+        input.form-control(
+          name="city"
+          type="text"
+          ng-model="billing.city"
+          required="true"
+          ng-class="{error: form.city.$error.required && form.$submitted}")
+
+
+
+  .row
+    .col-md-6
+      .form-group
+        label ZIP 
+        label.danger *
+        input.form-control(
+          name="zip"
+          type="text"
+          ng-model="billing.zip"
+          required="true"
+          ng-class="{error: form.zip.$error.required && form.$submitted}")
+
+  .row
+    .col-md-6
+      .form-group
+        label Phone 
+        label.danger *
+        input.form-control(
+          name="phone"
+          type="text"
+          ng-model="billing.phone"
+          required="true"
+          ng-class="{error: form.phone.$error.required && form.$submitted}")
+
+
+    .col-md-6
+      .form-group
+        label Email 
+        label.danger *
+        input.form-control(
+          name="email"
+          type="text"
+          ng-model="billing.email"
+          required="true"
+          ng-class="{error: form.email.$error.required && form.$submitted}")
+  hr
+    .row
+      .col-md-6.col-md-offset-3.text-center
+        .from-group
+          input type="checkbox" ng-model="terms.bol" ng-change="terms.openModal = true"
+          label I Agree to Sourcepad &nbsp;
+          a ng-click="terms.openModal = true" Terms of Service
+        br
+        a.btn.btn-primary.btn-block ng-class="{'disabled': !terms.bol}" ng-click="submit(form)" Submit
+
+
+        

@@ -1,0 +1,13 @@
+.page-wrapper
+  .container
+    .row
+      .col-md-offset-2.col-md-8
+        .header-billing
+          =image_tag 'logo.png'
+        .panel.panel-billing
+          .panel-heading
+            h2 Billing
+          .panel-body
+            div(billing-form)
+
+div(billing-terms ng-if="terms.openModal")

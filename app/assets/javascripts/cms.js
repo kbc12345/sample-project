@@ -17,6 +17,7 @@
 //= require ../../../cms/src/vendor/textangular/rangy.js
 //= require ../../../cms/src/vendor/textangular/sanitize.js
 //= require ../../../cms/src/vendor/textangular/textangular.js
+//= require ../../../cms/src/vendor/sortable/sortable.js
 
 //= require ../../../cms/src/app
 //= require_tree ../../../cms/src/filters

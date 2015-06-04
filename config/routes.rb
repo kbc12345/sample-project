@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   ###########
   get 'cms' => 'cms#index'
   get 'cms/*path' => 'cms#index'
+  get 'billing' => 'cms#index'
 
   namespace :api, defaults: { format: 'json' } do
     resource :session, only: %i(show create destroy)
@@ -40,6 +41,8 @@ Rails.application.routes.draw do
     resources :post_categories
     resources :messages, only: %i(index destroy)
     resources :applicants, only: %i(index destroy)
+    resources :billings, only: %i(index create)
+    resources :terms, only: %i(index update)
   end
 
 end

@@ -6,6 +6,15 @@ angular.module('cms').config [
     $urlRouterProvider.otherwise('/cms/login')
 
     $stateProvider
+
+      .state 'billing',
+        url: '/billing',
+        controller: 'BillingController',
+        templateUrl: 'billing/index.html'
+        data:
+          unauthenticated: true
+          authenticated: true
+
       .state 'cms',
         url: '/cms',
         controller: 'CmsController',
@@ -64,4 +73,10 @@ angular.module('cms').config [
         url: '',
         templateUrl: 'applicants/index.html'
 
+      .state 'cms.terms',
+        url: '/terms',
+        controller: 'TermsController',
+        templateUrl: 'terms/index.html'
+        data:
+          authenticated: true
   ]
