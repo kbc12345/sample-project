@@ -26,7 +26,7 @@ $(document).on 'ready page:load', ->
     $("#pull-btn-section").css("margin-top", relativeHeight-playOffset)
     $("#dash").css("top", $(window).height()-65)
     dashHeight = $('#customers').offset().top-$('#btn-play').offset().top
-    $('#dash').css("height", dashHeight-90)
+    $('#dash').css("height", dashHeight-130)
 
 $(document).on 'page:fetch', ->
   NProgress.start()
