@@ -56,18 +56,22 @@
           display: block
 
 
-+respond-to(0,$desktop-s)
++respond-to(0,$desktop-m)
   #about
     h1,h2,p,a
       text-align: center
-    .about-list
-      &.push-top
-        text-align: center
     .about-details
       margin-bottom: 100px
       text-align: center
 
+    ul.about-list
+      text-align: center
+      li .icon
+        float: none
+        display: inline-block
 
+      li h6
+        display: block
 
 +respond-to(0,$tablet-s)
   #about
