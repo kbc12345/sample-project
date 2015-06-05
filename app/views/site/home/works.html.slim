@@ -18,7 +18,7 @@ section#works-content
         .categories
           ul
             li 
-              a.active.filter-works  href="#" data-filter="all" All
+              a.active-tab.filter-works  href="#" data-filter="all" All
             li 
               a.filter-works href="#" data-filter="web" Web
             li 
@@ -39,25 +39,16 @@ section#works-content
 
   section#works-details  style="display:none;"
     .row
-      .col-md-offset-2.col-md-6
+      .col-md-offset-2.col-md-8
         =image_tag('sample_thumb.png')
-      .col-md-7
+      .col-md-4
         .work-info
-          a.close-project-btn href="#"
-            i.icon.icon-cross
+          / a.close-project-btn href="#"
+          /   i.icon.icon-cross
           h2 Sample Work
           a.website href="#" https://www.sample.com
           p
             | Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip
             | Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip
 
-          p
-            | Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip
-            | Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip
-
-
-          p
-            | Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip
-            | Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip
-
-
+          a.btn.btn-primary.btn-back href="#" Back

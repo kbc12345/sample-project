@@ -6,7 +6,7 @@
     a href="/" Sourcepad
 
 
-.blog-entries
+.blog-entries.blog-index
   .container
     -@posts.each do |post|
       .row
@@ -15,9 +15,6 @@
             .blog-info
               a href="/blog/#{post.slug}"
                 h2.title =post.title
-              span By
-              span.author =post.author
-              | - 
               span.date =format_date post.posted_date
             .blog-excerpt
               p 

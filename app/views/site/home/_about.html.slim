@@ -28,7 +28,7 @@
 .col-sm-6.col-sm-offset-2
   .about-details.left
     h2 What’s Happening
-    ul.about-list
+    ul.news-list
       -@posts.each do |post|
         li
           p  
@@ -36,8 +36,6 @@
               =post.title
             br
             span.date.italics =format_date post.posted_date
-            br
-            |Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
 
     
 
