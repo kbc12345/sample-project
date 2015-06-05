@@ -2,6 +2,9 @@
   padding: 100px 0px
   background: image-url('awards.jpg') no-repeat center center 
   position: relative
+  height: 100%
+  width: 100%
+
   +bg-cover
   
   h2,p
@@ -16,12 +19,15 @@
 
   .quote-content
     position: relative
-    top: 410px
+    top: 505px
     p
       font-style: italic
       font-weight: 200
       font-size: 16px
 
+  .awards-entry
+    margin-top: 90px
+    
 +respond-to(0,$desktop-s)
   #awards
     .quote-content

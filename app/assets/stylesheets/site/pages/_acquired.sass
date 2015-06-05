@@ -3,6 +3,8 @@
   padding: 100px 0px
   background: image-url('acquired.jpg') no-repeat center center 
   position: relative
+  height: 100%
+  width: 100%  
   +bg-cover
   
   h2,p
@@ -17,11 +19,14 @@
 
   .quote-content
     position: relative
-    top: 355px
+    top: 440px
     p
       font-style: italic
       font-weight: 200
       font-size: 16px
+
+  .aquired-entry
+    margin-top: 90px
 
 +respond-to(0,$desktop-s)
   #acquired
