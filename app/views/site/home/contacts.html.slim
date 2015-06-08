@@ -1,80 +1,82 @@
 =render 'header'
 
+
 section#contact-header
   .header-logo
     =image_tag 'logo.png'
-    
-sectin#contact-intro
-  .map-icon-holder
-    i.icon.icon-map
-  .container
+
+.container      
+  sectin#contact-intro
+    .map-icon-holder
+      i.icon.icon-map
+    .container
+      .row
+        .col-md-12.text-center
+          h3 ASK US ANYTHING!
+          p Contact us and we promise to be in touch within 24 hours!
+
+  section#contact-form
+    .container
+      .row
+        .col-md-6.col-md-offset-3
+          = form_for @message, remote: true do |f|
+            - if @message.errors.any?
+              #error_explanation
+                h2 = "#{pluralize(@message.errors.count, "error")} prohibited this high_score from being saved:"
+                ul
+                  - @message.errors.full_messages.each do |message|
+                    li = message
+
+
+            .form-group
+              = f.email_field :email, class: "form-control required email", placeholder: "Email", required: true
+
+            .form-group
+              = f.text_field :sender, class: "form-control required", placeholder: "Name", required: true
+
+            .form-group
+              = f.text_area :message, class: "form-control required", placeholder: "Message", required: true
+            
+            a.btn.btn-primary.btn-block.btn-submit href="#" Submit
+            /=f.submit 'Submit', class: "btn btn-primary btn-block submit-btn"
+
+  section#thank-you style="display: none;"
+    .container
+      .row
+        .col-md-6.text-center
+          h3
+            |Thank you for contacting us.
+            br
+            |We'll get back to you as soon as possible.
+
+  section#contact-info
     .row
-      .col-md-8.col-md-offset-4.text-center
-        h3 ASK US ANYTHING!
-        p Contact us and we promise to be in touch within 24 hours!
-
-section#contact-form
-  .container
-    .row
-      .col-md-6.col-md-offset-5
-        = form_for @message, remote: true do |f|
-          - if @message.errors.any?
-            #error_explanation
-              h2 = "#{pluralize(@message.errors.count, "error")} prohibited this high_score from being saved:"
-              ul
-                - @message.errors.full_messages.each do |message|
-                  li = message
-
-
-          .form-group
-            = f.email_field :email, class: "form-control required email", placeholder: "Email", required: true
-
-          .form-group
-            = f.text_field :sender, class: "form-control required", placeholder: "Name", required: true
-
-          .form-group
-            = f.text_area :message, class: "form-control required", placeholder: "Message", required: true
-          
-          a.btn.btn-primary.btn-block.btn-submit href="#" Submit
-          /=f.submit 'Submit', class: "btn btn-primary btn-block submit-btn"
-
-section#thank-you style="display: none;"
-  .container
-    .row
-      .col-md-16.text-center
-        h3
-          |Thank you for contacting us.
-          br
-          |We'll get back to you as soon as possible.
-
-section#contact-info
-  .row
-    .col-sm-8.left-info
-      .map-overlay
-        iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Discovery%20Suites%2C%20Pasig%2C%20Metro%20Manila%2C%20Philippines&key=AIzaSyATiNfGmX6571qzMYniC6U_QNLDFMCYUys"
-      /.map-circle.left
+      .col-sm-6.left-info
+        .map-overlay
+          iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Discovery%20Suites%2C%20Pasig%2C%20Metro%20Manila%2C%20Philippines&key=AIzaSyATiNfGmX6571qzMYniC6U_QNLDFMCYUys"
+        /.map-circle.left
 
 
 
-      .info-text
-        h4 MANILA
-        p 
-          |25 ADB Avenue, Suite 2701 
-          br
-          |Discovery Centre Building 
-          br
-          |Ortigas Center, Pasig City
-    .col-md-8.right-info
-      .map-overlay
-        iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=64+Beaver+Street+Suite+203++New+York+10004&key=AIzaSyATiNfGmX6571qzMYniC6U_QNLDFMCYUys"
-      //.map-circle.right
-      
-      .info-text
-        h4 NEW YORK
-        p 
-          |64 Beaver Street Suite 203 
-          br
-          |New York, NY 10004
-          br
-          |(646) 583-2398
+        .info-text
+          h4 MANILA
+          p 
+            |25 ADB Avenue, Suite 2701 
+            br
+            |Discovery Centre Building 
+            br
+            |Ortigas Center, Pasig City
+      .col-md-6.right-info
+        .map-overlay
+          iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=64+Beaver+Street+Suite+203++New+York+10004&key=AIzaSyATiNfGmX6571qzMYniC6U_QNLDFMCYUys"
+        //.map-circle.right
+        
+        .info-text
+          h4 NEW YORK
+          p 
+            |64 Beaver Street Suite 203 
+            br
+            |New York, NY 10004
+            br
+            |(646) 583-2398
 

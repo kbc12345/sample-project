@@ -14,8 +14,6 @@ class Post < ActiveRecord::Base
   SHOW_DETAILS = %w(
     posts.slug
     posts.title
-    users.first_name
-    users.last_name
     posts.posted_date
     posts.content
     posts.featured

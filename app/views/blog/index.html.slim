@@ -1,16 +1,18 @@
 .blog-header
-  a href="/"
-    =image_tag('sourcepad_black.png')
-  h5 
-    |Made with love from 
-    a href="/" Sourcepad
+  .row
+    .col-md-offset-2.col-md-8
+      a href="/"
+        =image_tag('sourcepad_black.png')
+      h5 
+        |Made with love from 
+        a href="/" Sourcepad
 
 
 .blog-entries.blog-index
   .container
     -@posts.each do |post|
       .row
-        .col-md-offset-3.col-md-10
+        .col-md-offset-2.col-md-8
           .blog-entry
             .blog-info
               a href="/blog/#{post.slug}"
@@ -21,11 +23,11 @@
                 =raw post.excerpt
 
 .row
-  .col-md-offset-4.col-md-8.text-center
+  .col-md-offset-2.col-md-8.text-center
     a.btn.btn-default href="#" More Stories
 
 .row
-  .col-md-offset-4.col-md-8.text-center.google-search-container
+  .col-md-offset-2.col-md-8.text-center.google-search-container
     =render 'site_search'
 
 /=render 'site_search'
