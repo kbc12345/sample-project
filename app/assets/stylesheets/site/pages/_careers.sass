@@ -60,7 +60,7 @@
   height: 800px
   width: 1px
   left: 50%
-  +hide-desktop-s
+
 
 .career-btn-row
   margin: 30px 0px
@@ -69,9 +69,11 @@
 +respond-to(0,$desktop-m)
   #careers-header
     height: $header-height
-
+  #career-dash
+    display: none
 
 +respond-to(0,$desktop-s)
   #careers-content .job-position
     padding: 0px
+
 
