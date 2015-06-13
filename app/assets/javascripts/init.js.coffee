@@ -13,6 +13,8 @@ $(document).on 'ready page:load', ->
     dashHeight = $('#customers').offset().top-$('#btn-play').offset().top
     $('#dash').css("height", dashHeight-60)
 
+
+
 $(document).on 'page:fetch', ->
   NProgress.start()
   return
@@ -33,13 +35,16 @@ $(document).on "click", '#btn-nav-toggle', (event) ->
   event.preventDefault()
   wrapper = $('#page-wrapper')
   body = $('body')
+  sidebar = $('#sidebar')
 
   if wrapper.hasClass("pushed")
     wrapper.removeClass("pushed")
     body.removeClass("disable-scroll")
+    sidebar.removeClass("pushed")
   else
     body.addClass("disable-scroll")
     wrapper.addClass("pushed")
+    sidebar.addClass("pushed")
 
 
 $(document).on "click", '.btn-submit', (event) ->

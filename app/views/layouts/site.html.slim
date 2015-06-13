@@ -4,8 +4,8 @@ html
     title Sourcepad
     meta charset="utf-8"
     meta content="IE=edge" http-equiv="X-UA-Compatible" 
-    meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport" 
     meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" 
+    meta content="yes" name="apple-mobile-web-app-capable"
     meta content="true" name="HandheldFriendly" 
     meta content="yes" name="apple-mobile-web-app-capable" 
     meta content="" name="description" 
@@ -23,9 +23,9 @@ body
 css:
   body { font-family: "effra", sans-serif; }
 
+=render 'site/home/sidebar'
 
 #page-wrapper
-  =render 'site/home/sidebar'
   = yield
   =render 'site/home/footer'
 
