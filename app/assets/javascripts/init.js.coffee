@@ -5,26 +5,11 @@ $(document).on 'ready page:load', ->
 
   # makes the landing text center
   if $("#landing-text").length > 0
-    relativeHeight = $(window).height()/2
+    windowHeight = window.innerHeight
     
-    #meaning mobile
-    if relativeHeight <= 280
-      textOffset = 140
-      playOffset = 170
-    else if relativeHeight <= 380
-      textOffset = 220
-      playOffset = 160
-    else if relativeHeight <= 240
-      heightOffset = 80
-      playOffset = 25
-    else
-      textOffset = 130
-      playOffset =  250
-
-
-    $("#landing-text").css("margin-top", relativeHeight-textOffset)
-    $("#pull-btn-section").css("margin-top", relativeHeight-playOffset)
-    $("#dash").css("top", $(window).height()-65)
+    heightOffset = windowHeight-$('#landing-text').height()-50
+    $('#landing-text').css("margin-top", heightOffset)
+    $("#dash").css("top", windowHeight-65)
     dashHeight = $('#customers').offset().top-$('#btn-play').offset().top
     $('#dash').css("height", dashHeight-60)
 

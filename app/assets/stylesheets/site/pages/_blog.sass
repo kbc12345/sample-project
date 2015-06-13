@@ -1,14 +1,14 @@
 .blog-wrapper
 
   p
-    font-size: 1.3em
+    +font-size(1.4)
     margin: 0px
 
   a 
     color: $blog-primary
     text-decoration: none
     font-family: "acta-display", sans-serif
-    font-size: 14px
+    +font-size(1.4)
     &:hover
       text-decoration: underline
       color: $blue
@@ -18,12 +18,12 @@
     padding: 10px 20px
     border: 1px solid #D9D9D9
     border-radius: 3px
-    color: #7E7E7E
+    color: $blog-primary
     +btn-transition
     &:hover
-      background-color: #555555
+      background-color: $gray-light
       color: $white
-      border-color: #555555
+      border-color: $gray-light
       text-decoration: none
 
   .footer-links
@@ -64,7 +64,7 @@
   margin-bottom: 40px
   text-align: center
   a.btn-home
-    font-size: 30px
+    +font-size(3)
     padding: 20px 23px
     background-color: #E5E5E5
     border-radius: 50%
@@ -90,7 +90,7 @@
       a
         text-transform: uppercase
         i
-          font-size: 16px
+          +font-size(1.6)
           vertical-align: middle
    
 
@@ -100,7 +100,7 @@
     margin: 0px
 
 .blog-info
-  font-size: 1.3em
+  +font-size(1.4)
   text-align: center
   margin-bottom: 20px
   margin-top: 20px
@@ -120,35 +120,6 @@
     margin-top: 15px
     text-align: left
 
-.blog-post
-  padding-bottom: 40px
-  p
-    font-size: 20px
-  a
-    font-size: 20px
-    color: $blue
-    text-decoration: underline
-    &:hover
-      text-decoration: none
-  img
-    width: 100%
-
-.blog-post-footnote
-  margin-bottom: 30px
-
-.blog-excerpt
-  margin-top: 15px
-
-.suggested-post-container
-  margin-top: 40px
-
-.suggested-post
-  margin: 0px
-  padding: 0px
-  list-style: none
-  li
-    border-bottom: 1px solid #E9E9E9
-    padding: 10px 0px
 
 
 .gsc-search-button

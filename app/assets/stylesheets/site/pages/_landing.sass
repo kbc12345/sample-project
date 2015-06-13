@@ -10,19 +10,22 @@
     text-align: center
     color: $white
     padding: 0px 30px
-    h1
-      font-size: 90px
-    h4
-      font-size: 26px
 
+    h1
+      +font-size(9)
+    h4
+      +font-size(2.6)
     .btn
       margin-top: 10px
       padding: 10px 40px
-      font-size: 16px
+      +font-size(1.6)
+
+  #pull-btn-section
+    margin-top: 100px
 
   +respond-to(0,$tablet-s)
     #landing-text
       h1
-        font-size: 55px
+        +font-size(5.5)
       h4
-        font-size: 18px
+        +font-size(1.8)

@@ -24,7 +24,7 @@
         margin-top: 15px
       h6
         display: inline-block
-        font-size: 26px
+        +font-size(2.6)
         position: relative
         top: 22px
         &.pull-top
@@ -36,7 +36,7 @@
   .icon-clock,.icon-chat,.icon-users
     border: 2px solid
     border-radius: 50%
-    font-size: 50px
+    +font-size(5)
     margin-left: 20px
     float: right
     position: relative
@@ -50,9 +50,9 @@
   list-style: none
   li
     a
-      font-size: 22px
+      +font-size(2.2)
       font-weight: 500
-      color: #606060
+      color: $article-heading
       &:hover
         color: $primary
 
