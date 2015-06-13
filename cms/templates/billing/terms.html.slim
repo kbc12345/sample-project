@@ -4,6 +4,10 @@
       h4 Terms of Service
     .modal-body
       p (ng-bind-html="terms.content")
-      
-      .text-center
-        a.btn.btn-primary ng-click="terms.openModal = false" Close
+    
+    .modal-footer
+      .row
+        .col-md-12
+          .pull-right
+            a.btn.btn-transparent ng-click="toggleTerms(false)"  Cancel
+            a.btn.btn-primary.btn-wide ng-click="toggleTerms(true)" I Agree
