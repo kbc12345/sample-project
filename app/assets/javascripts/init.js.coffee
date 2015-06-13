@@ -8,6 +8,10 @@ $(document).on 'ready page:load', ->
     windowHeight = window.innerHeight
     
     heightOffset = windowHeight-$('#landing-text').height()-50
+
+    # Special case when it is a small mobile phone ex. iphone 4,5
+    heightOffset = 130 if heightOffset < 80
+
     $('#landing-text').css("margin-top", heightOffset)
     $("#dash").css("top", windowHeight-65)
     dashHeight = $('#customers').offset().top-$('#btn-play').offset().top
