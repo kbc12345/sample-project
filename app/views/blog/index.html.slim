@@ -9,18 +9,17 @@
 
 
 .blog-entries.blog-index
-  .container
-    -@posts.each do |post|
-      .row
-        .col-md-offset-2.col-md-8
-          .blog-entry
-            .blog-info
-              a href="/blog/#{post.slug}"
-                h2.title =post.title
-              span.date =format_date post.posted_date
-            .blog-excerpt
-              p 
-                =raw post.excerpt
+  -@posts.each do |post|
+    .row
+      .col-md-offset-2.col-md-8
+        .blog-entry
+          .blog-info
+            a href="/blog/#{post.slug}"
+              h2.title =post.title
+            span.date =format_date post.posted_date
+          .blog-excerpt
+            p 
+              =raw post.excerpt
 
 .row
   .col-md-offset-2.col-md-8.text-center

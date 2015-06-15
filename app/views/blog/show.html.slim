@@ -1,17 +1,16 @@
-.container
-  .row
-    .col-md-offset-2.col-md-8
-      .blog-entry.no-border
-        .blog-info
-          h1.title.no-hover =@post.title
-          span.date =format_date @post.posted_date
+.row
+  .col-md-offset-2.col-md-8
+    .blog-entry.no-border
+      .blog-info
+        h1.title.no-hover =@post.title
+        span.date =format_date @post.posted_date
 
-      .blog-post
-        =raw @post.content
+    .blog-post
+      =raw @post.content
 
-      .blog-post-footnote
-        .text-center
-          a.btn.btn-default href="/blog" Back
+    .blog-post-footnote
+      .text-center
+        a.btn.btn-default href="/blog" Back
 
 / .suggested-post-container
 /   .container
