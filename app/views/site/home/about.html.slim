@@ -1,0 +1,19 @@
+#header
+  =render 'home_nav'
+
+section#about-us-landing
+  =render 'about_us_landing'
+
+section#about-us
+  .container
+    .row
+      .col-md-6.left-details
+        =render 'about_us_left'
+
+      .col-md-6.right-details
+        =render 'about_us_right'
+
+section#questions
+  .container
+    .row
+      =render 'questions'

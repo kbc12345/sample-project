@@ -1,0 +1,37 @@
+#about-us-landing
+  height: 100%
+  width: 100%
+  background: image-url('about.jpg') no-repeat center center 
+  background-position-y: 0px
+  position: relative
+  color: $white
+  +bg-cover
+
+  #about-landing-text
+    padding: 300px 50px
+    .btn
+      margin-top: 10px
+      padding: 10px 40px
+      +font-size(1.6)
+
+#about-us
+  margin: 80px 0px
+  .about-us-entry
+    position: relative
+    margin: 10px 0px
+    padding: 10px
+    h3
+      color: $primary
+    &.bordered
+      border: 1px solid $primary
+      border-radius: 4px
+      margin: 80px 0px
+      padding: 40px 40px 15px 40px
+    i
+      position: absolute
+      top: -42px
+      font-size: 40px
+      padding: 8px 15px 0px 17px
+      background-color: $primary
+      border-radius: 50%
+      color: $white
