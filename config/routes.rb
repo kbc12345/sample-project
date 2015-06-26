@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   ###########
   # statics
   ###########
-  get 'contacts', to: "site/contacts#index"
+  get 'contact', to: "site/contact#index"
   get 'careers', to: "site/careers#index"
   get 'works', to: "site/works#index"
   get 'about', to: "site/about#index"

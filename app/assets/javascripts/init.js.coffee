@@ -42,7 +42,7 @@ $(document).on 'ready page:load', ->
   if $('#works-laptop').length > 0
     windowHeight = windowHeight/2
     heightOffset = windowHeight-$('#work-landing-text').height()+100
-    imageOffset =  window.innerHeight-$('#works-laptop').height()-10
+    imageOffset =  window.innerHeight-600
     $('#works-laptop').css("top", imageOffset)
     $('#work-landing-text').css("margin-top", heightOffset)
 
