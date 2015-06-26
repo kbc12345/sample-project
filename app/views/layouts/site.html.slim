@@ -23,11 +23,11 @@ body
 css:
   body { font-family: "effra", sans-serif; }
 
-=render 'site/home/sidebar'
+=render 'site/partials/sidebar'
 
 #page-wrapper
   = yield
-  =render 'site/home/footer'
+  =render 'site/partials/footer'
 
 script src="//use.typekit.net/sia2sla.js"
 script try{Typekit.load();}catch(e){}

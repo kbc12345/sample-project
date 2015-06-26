@@ -1,97 +1,122 @@
 #about
-  padding: 70px 0px
-  .about-details
-    padding: $home-paddings
+  padding: 60px 0px
+  text-align: center
+  border-top: 2px solid $primary
+  border-bottom: 2px solid $primary
+  .about-heading
+    margin: 20px 0px
     h2
       color: $primary
-    p
-      margin-top: 15px
-    &.right
-      text-align: right
-    &.left
-      text-align: left
-
-  ul.about-list
-    padding: 0px
-    margin: 0px
-    list-style: none
-    &.push-top
-      margin-top: 50px
-    li
-      color: $primary
-      margin-bottom: 50px
-      p
-        margin-top: 15px
-      h6
-        display: inline-block
-        +font-size(2.6)
-        position: relative
-        top: 22px
-        &.pull-top
-          top: -20px
-        &.align-mid
-          top: 48px
-
-
-  .icon-clock,.icon-chat,.icon-users
+  .icon
     border: 2px solid
     border-radius: 50%
+    padding: 10px 10px 0px 10px
+    color: $primary
     +font-size(5)
-    margin-left: 20px
-    float: right
-    position: relative
-    top: 17px
-    padding: 10px 20px 1px 20px
+  h6
+    color: $primary
 
-
-.news-list
-  padding: 0px
-  margin: 0px
-  list-style: none
-  li
+  .news-list
+    margin: 0px
+    padding: 0px
+    list-style: none
     a
-      +font-size(2.2)
-      font-weight: 500
-      color: $article-heading
-      &:hover
-        color: $primary
+      +font-size(2)
 
-+respond-to(0,$desktop-m)
-  #about
-    .about-list
-      li 
-        .icon
-          float: none
-          display: inline-block
+// #about
+//   padding: 70px 0px
+//   .about-details
+//     padding: $home-paddings
+//     h2
+//       color: $primary
+//     p
+//       margin-top: 15px
+//     &.right
+//       text-align: right
+//     &.left
+//       text-align: left
 
-        h6
-          display: block
-    .about-details.left
-      text-align: center
+//   ul.about-list
+//     padding: 0px
+//     margin: 0px
+//     list-style: none
+//     &.push-top
+//       margin-top: 50px
+//     li
+//       color: $primary
+//       margin-bottom: 50px
+//       p
+//         margin-top: 15px
+//       h6
+//         display: inline-block
+//         +font-size(2.6)
+//         position: relative
+//         top: 22px
+//         &.pull-top
+//           top: -20px
+//         &.align-mid
+//           top: 48px
 
-+respond-to(0,$desktop-m)
-  #about
-    h1,h2,p,a
-      text-align: center
-    .about-details
-      margin-bottom: 100px
-      padding: 0px
-      text-align: center
 
-    ul.about-list
-      text-align: center
-      li .icon
-        float: none
-        display: inline-block
+//   .icon-clock,.icon-chat,.icon-users
+//     border: 2px solid
+//     border-radius: 50%
+//     +font-size(5)
+//     margin-left: 20px
+//     float: right
+//     position: relative
+//     top: 17px
+//     padding: 10px 20px 1px 20px
 
-      li h6
-        display: block
 
-+respond-to(0,$tablet-s)
-  #about
-    padding-bottom: 30px
-    .about-details.left
-      padding-bottom: 30px
-      padding-top: 30px
-      margin-bottom: 0px
-      border-top: 1px solid $grey
+// .news-list
+//   padding: 0px
+//   margin: 0px
+//   list-style: none
+//   li
+//     a
+//       +font-size(2.2)
+//       font-weight: 500
+//       color: $article-heading
+//       &:hover
+//         color: $primary
+
+// +respond-to(0,$desktop-m)
+//   #about
+//     .about-list
+//       li 
+//         .icon
+//           float: none
+//           display: inline-block
+
+//         h6
+//           display: block
+//     .about-details.left
+//       text-align: center
+
+// +respond-to(0,$desktop-m)
+//   #about
+//     h1,h2,p,a
+//       text-align: center
+//     .about-details
+//       margin-bottom: 100px
+//       padding: 0px
+//       text-align: center
+
+//     ul.about-list
+//       text-align: center
+//       li .icon
+//         float: none
+//         display: inline-block
+
+//       li h6
+//         display: block
+
+// +respond-to(0,$tablet-s)
+//   #about
+//     padding-bottom: 30px
+//     .about-details.left
+//       padding-bottom: 30px
+//       padding-top: 30px
+//       margin-bottom: 0px
+//       border-top: 1px solid $grey

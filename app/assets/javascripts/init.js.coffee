@@ -1,12 +1,29 @@
 $(document).on 'ready page:load', ->
 
+
+  $('#landing').backstretch [
+    '/assets/header_2.jpg'
+    '/assets/acquired.jpg'
+    '/assets/awards.jpg'],
+    duration: 2000
+    fade: 750
+
+  # $("body").backstretch [
+  #   '/assets/header.jpg'
+  #   '/assets/awards.jpg'
+  #   '/assets/aquired.jpg'
+  # ],
+  #   duration: 3000
+  #   fade: 750
+
   #fastlick
   FastClick.attach(document.body)
 
+  windowHeight = window.innerHeight
+
   # makes the landing text center
   if $("#landing-text").length > 0
-    windowHeight = window.innerHeight
-    heightOffset = windowHeight-$('#landing-text').height()-50
+    heightOffset = windowHeight-$('#landing-text').height()
     # Special case when it is a small mobile phone ex. iphone 4,5
     heightOffset = 130 if heightOffset < 80
     $('#landing-text').css("margin-top", heightOffset)
@@ -16,11 +33,19 @@ $(document).on 'ready page:load', ->
 
 
   if $("#about-landing-text").length > 0
-    windowHeight = window.innerHeight/2
-    heightOffset = windowHeight-$('#landing-text').height()-130
+    windowHeight = windowHeight/2
+    heightOffset = windowHeight-$('#about-landing-text').height()+150
     # Special case when it is a small mobile phone ex. iphone 4,5
     heightOffset = 120 if heightOffset < 160
     $('#about-landing-text').css("margin-top", heightOffset)
+
+  if $('#works-laptop').length > 0
+    windowHeight = windowHeight/2
+    heightOffset = windowHeight-$('#work-landing-text').height()+100
+    imageOffset =  window.innerHeight-$('#works-laptop').height()-10
+    $('#works-laptop').css("top", imageOffset)
+    $('#work-landing-text').css("margin-top", heightOffset)
+
 
 $(document).on 'page:fetch', ->
   NProgress.start()

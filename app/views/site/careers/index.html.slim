@@ -1,9 +1,16 @@
-=render 'header'
+/ =render 'header'
 
-section#careers-header
-  .header-logo
-    =image_tag 'logo.png'
+/ section#careers-header
+/   .header-logo
+/     =image_tag 'logo.png'
 
+
+#header
+  =render 'home_nav'
+
+section#about-us-landing
+  =render 'about_us_landing'
+  
 sectin#careers-intro
   .map-icon-holder
     i.icon.icon-code

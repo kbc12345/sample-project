@@ -5,5 +5,6 @@
 //= require lib/fastclick
 //= require lib/growl
 //= require lib/nprogress
+//= require lib/backstretch
 //= require works
 //= require init

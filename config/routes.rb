@@ -6,17 +6,13 @@ Rails.application.routes.draw do
   ###########
   # statics
   ###########
-  get 'contacts', to: "site/home#contacts"
-  get 'careers', to: "site/home#careers"
-  get 'careersv2', to: "site/home#careers"
-
-  get 'works', to: "site/home#works"
-  get 'about', to: "site/home#about"
-  get 'blogv2', to: "site/home#blogv2"
+  get 'contacts', to: "site/contacts#index"
+  get 'careers', to: "site/careers#index"
+  get 'works', to: "site/works#index"
+  get 'about', to: "site/about#index"
 
   resource :messages, only: %i(create)
   resource :applicants, only: %i(create)
-
 
   ###########
   # BLOG
