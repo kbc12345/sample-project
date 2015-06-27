@@ -1,8 +1,14 @@
-=render '/site/partials/header'
+/ =render '/site/partials/header'
 
-section#contact-header
-  .header-logo
-    =image_tag 'logo.png'
+/ section#contact-header
+/   .header-logo
+/     =image_tag 'logo.png'
+
+#header
+  =render 'site/partials/home_nav'
+
+section#contact-landing
+  =render 'landing'
 
 .container      
   sectin#contact-intro
@@ -12,7 +18,7 @@ section#contact-header
       .row
         .col-md-12.text-center
           h3 ASK US ANYTHING!
-          p Contact us and we promise to be in touch within 24 hours!
+          //p Contact us and we promise to be in touch within 24 hours!
 
   section#contact-form
     .container

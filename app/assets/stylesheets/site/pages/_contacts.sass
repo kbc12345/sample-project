@@ -1,3 +1,22 @@
+#contact-landing
+  height: 100%
+  width: 100%
+  background: image-url('about.jpg') no-repeat center center 
+  background-position-y: 0px
+  position: relative
+  color: $white
+  border-bottom: 2px solid $primary
+  +bg-cover
+
+  #contact-landing-text
+    position: relative
+    top: 50%
+    margin-top: -100px
+    .btn
+      margin-top: 10px
+      padding: 10px 40px
+      +font-size(1.6)
+      
 #contact-header
   background: image-url('contact_banner.jpg') no-repeat center center 
   +header-defaults
@@ -114,6 +133,10 @@
 #thank-you
   margin-top: 50px
   
++respond-to(0,$tablet-s)
+  #contact-landing-text
+    top: 30%
+
 +respond-to(0,$desktop-m)
   #contact-header
     height: $header-height

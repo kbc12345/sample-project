@@ -1,21 +1,5 @@
 $(document).on 'ready page:load', ->
 
-
-  $('#landing').backstretch [
-    '/assets/header_2.jpg'
-    '/assets/acquired.jpg'
-    '/assets/awards.jpg'],
-    duration: 2000
-    fade: 750
-
-  # $("body").backstretch [
-  #   '/assets/header.jpg'
-  #   '/assets/awards.jpg'
-  #   '/assets/aquired.jpg'
-  # ],
-  #   duration: 3000
-  #   fade: 750
-
   #fastlick
   FastClick.attach(document.body)
 
