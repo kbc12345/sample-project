@@ -1,0 +1,12 @@
+.row.news-summary
+  .col-sm-12
+    h1 What's happening
+
+    ul.news-list
+      -@posts.each do |post|
+        li
+          p  
+            a href="/blog/#{post.slug}"
+              =post.title
+            br
+            span.date.italics =format_date post.posted_date
