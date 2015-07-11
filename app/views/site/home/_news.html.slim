@@ -1,5 +1,5 @@
 .row.news-summary
-  .col-sm-12
+  .col-md-offset-3.col-md-6
     h1 What's happening
 
     ul.news-list
@@ -8,5 +8,9 @@
           p  
             a href="/blog/#{post.slug}"
               =post.title
+    
             br
-            span.date.italics =format_date post.posted_date
+            span.exceprt 
+              |Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, 
+              br
+              |porta ac consectetur ac, vestibulum at eros curabitur blandi

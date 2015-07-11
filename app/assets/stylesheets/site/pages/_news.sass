@@ -1,19 +1,30 @@
 #news
   background-color: $primary
   color: $white
-  padding: 80px 0px 90px 0px
+  padding: 80px 0px
   text-align: center
+  border-top: 2px solid $primary-dark
+  border-bottom: 2px solid $primary-dark
   h1
-    +font-size(5.4)
+    +font-size(6.4)
+    margin-bottom: 30px
   .news-list
     margin: 0px
     padding: 0px
     list-style: none
     a
-      +font-size(2)
+      +font-size(2.4)
       color: $white
       &:hover
         text-decoration: underline
-
+    li
+      margin-bottom: 40px
+      border-bottom: 1px solid $white
   .date
-    color: $date
+    color: $white
+    +font-size(1.6)
+  .exceprt
+    font-style: italic
+    font-weight: 200
+    color: $white
+    +font-size(1.6)

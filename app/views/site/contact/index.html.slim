@@ -4,11 +4,17 @@
 /   .header-logo
 /     =image_tag 'logo.png'
 
-#header
-  =render 'site/partials/home_nav'
+=render '/site/partials/header'
 
-section#contact-landing
-  =render 'landing'
+section#careers-header
+  .header-logo
+    =image_tag 'logo.png'
+    
+/ #header
+/   =render 'site/partials/home_nav'
+
+/ section#contact-landing
+/   =render 'landing'
 
 .container      
   sectin#contact-intro

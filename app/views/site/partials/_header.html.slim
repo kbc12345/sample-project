@@ -1,29 +1,25 @@
-#header
-  .desktop-nav
-    a.logo href="/" 
-      =image_tag('logo.png')
-    ul#navigation
-      li
-        a class="#{is_active('about')}" href="/about" ABOUT US
-      li
-        a class="#{is_active('works')}" href="/works" OUR WORK
-      li
-        a class="#{is_active('careers')}" href="/careers" CAREERS
+.container
+  .row 
+    .col-md-12
+      #header
+        .desktop-nav
+          a.logo href="/" 
+            =image_tag('logo.png')
+          ul#navigation
+            li
+              a class="#{is_active('about')}" href="/about" ABOUT US
+            li
+              a class="#{is_active('works')}" href="/works" OUR WORK
+            li
+              a class="#{is_active('careers')}" href="/careers" CAREERS
 
-      li
-        a class="#{is_active('contacts')}" href="/contact" CONTACT
-      li
-        a  href="/blog" NEWS
+            li
+              a class="#{is_active('contacts')}" href="/contact" CONTACT
+            li
+              a  href="/blog" NEWS
 
-      li
-        a href="#"
-          i.icon.icon-facebook
-        a href="#"
-          i.icon.icon-twitter               
-        a href="#"
-          i.icon.icon-linkedin
+  
 
-
-  a#btn-nav-toggle href="#"
-    i.icon.icon-hamburger
+        a#btn-nav-toggle href="#"
+          i.icon.icon-hamburger
 
