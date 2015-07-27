@@ -5,12 +5,10 @@
     ul.news-list
       -@posts.each do |post|
         li
-          p  
+          p
             a href="/blog/#{post.slug}"
               =post.title
-    
+
             br
-            span.exceprt 
-              |Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, 
-              br
-              |porta ac consectetur ac, vestibulum at eros curabitur blandi
+            span.exceprt
+              =format_date post.posted_date

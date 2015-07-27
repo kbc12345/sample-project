@@ -2,7 +2,7 @@
   .col-sm-12.about-heading
     .about-details.text-center
       h1
-        |Built for entrepreneurs, 
+        |Built for entrepreneurs,
         |by entrepreneurs
       h4 Our founders have created 4 companies, raised $20 million and had 2 exits.
 
@@ -16,20 +16,23 @@
 
   .col-sm-4
     i.icon.icon-chat
-    h6 
+    h6
       |Constant communication &
       br
       | Real-Time Transparency
-    
+
   .col-sm-4
     i.icon.icon-users
     h6
-      |We hire developers 
+      |We hire developers
       br
       |Who are 10x productive
 
+.row.service-row
+  .col-md-12
+    a.btn.btn-primary.btn-lg href="/works" SEE OUR SERVICES
     / ul.about-list.push-top
-    /   li 
+    /   li
     /     i.icon.icon-clock
     /     h6
     /       |Agile Development &
@@ -38,7 +41,7 @@
     /   li
     /     i.icon.icon-chat
 
-    /     h6 
+    /     h6
     /       |Constant communication &
     /       br
     /       | Real-Time Transparency
@@ -54,14 +57,14 @@
 /     ul.news-list
 /       -@posts.each do |post|
 /         li
-/           p  
+/           p
 /             a href="/blog/#{post.slug}"
 /               =post.title
 /             br
 /             span.date.italics =format_date post.posted_date
 
-    
 
-    
+
+
 /     a.underline href="/blog" View more articles
-/    
+/
