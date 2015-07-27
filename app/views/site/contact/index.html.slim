@@ -9,14 +9,14 @@
 section#careers-header
   .header-logo
     =image_tag 'logo.png'
-    
+
 / #header
 /   =render 'site/partials/home_nav'
 
 / section#contact-landing
 /   =render 'landing'
 
-.container      
+.container
   sectin#contact-intro
     .map-icon-holder
       i.icon.icon-map
@@ -24,7 +24,7 @@ section#careers-header
       .row
         .col-md-12.text-center
           h3 ASK US ANYTHING!
-          //p Contact us and we promise to be in touch within 24 hours!
+
 
   section#contact-form
     .container
@@ -47,9 +47,9 @@ section#careers-header
 
             .form-group
               = f.text_area :message, class: "form-control required", placeholder: "Message", required: true
-            
+
             a.btn.btn-primary.btn-block.btn-submit href="#" Submit
-            /=f.submit 'Submit', class: "btn btn-primary btn-block submit-btn"
+
 
   section#thank-you style="display: none;"
     .container
@@ -65,29 +65,22 @@ section#contact-info
     .col-sm-6.left-info
       .map-overlay
         iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Discovery%20Suites%2C%20Pasig%2C%20Metro%20Manila%2C%20Philippines&key=AIzaSyATiNfGmX6571qzMYniC6U_QNLDFMCYUys"
-      /.map-circle.left
-
-
-
-      .info-text
-        h4 MANILA
-        p 
-          |25 ADB Avenue, Suite 2701 
-          br
-          |Discovery Centre Building 
-          br
-          |Ortigas Center, Pasig City
+        .info-text
+          h4 MANILA
+          p
+            |25 ADB Avenue, Suite 2701
+            br
+            |Discovery Centre Building
+            br
+            |Ortigas Center, Pasig City
     .col-md-6.right-info
       .map-overlay
         iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=64+Beaver+Street+Suite+203++New+York+10004&key=AIzaSyATiNfGmX6571qzMYniC6U_QNLDFMCYUys"
-      //.map-circle.right
-      
-      .info-text
-        h4 NEW YORK
-        p 
-          |64 Beaver Street Suite 203 
-          br
-          |New York, NY 10004
-          br
-          |(646) 583-2398
-
+        .info-text
+          h4 NEW YORK
+          p
+            |64 Beaver Street Suite 203
+            br
+            |New York, NY 10004
+            br
+            |(646) 583-2398

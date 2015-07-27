@@ -1,9 +1,9 @@
 .container
-  .row 
+  .row
     .col-md-12
       #header
         .desktop-nav
-          a.logo href="/" 
+          a.logo href="/"
             =image_tag('logo.png')
           ul#navigation
             li
@@ -14,12 +14,11 @@
               a class="#{is_active('careers')}" href="/careers" CAREERS
 
             li
-              a class="#{is_active('contacts')}" href="/contact" CONTACT
+              a class="#{is_active('contact')}" href="/contact" CONTACT
             li
               a  href="/blog" NEWS
 
-  
+
 
         a#btn-nav-toggle href="#"
           i.icon.icon-hamburger
-

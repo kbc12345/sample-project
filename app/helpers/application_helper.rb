@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def is_active action
-    params[:action] == action ? 'active' : ''
+    params[:controller].split("/")[1] == action ? 'active' : ''
   end
 
   def format_date(date)
