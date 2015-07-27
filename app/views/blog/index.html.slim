@@ -3,8 +3,8 @@
     .col-md-offset-2.col-md-8
       a href="/"
         =image_tag('sourcepad_black.png')
-      h5 
-        |Made with love from 
+      h5
+        |Made with love from
         a href="/" Sourcepad
 
 
@@ -18,7 +18,7 @@
               h2.title =post.title
             span.date =format_date post.posted_date
           .blog-excerpt
-            p 
+            p
               =raw post.excerpt
 
 .row
@@ -26,7 +26,7 @@
     a.btn.btn-default href="#" More Stories
 
 .row
-  .col-md-offset-2.col-md-8.text-center.google-search-container
-    =render 'site_search'
+  .col-md-offset-2.col-md-8.text-center
+    =render 'search_form'
 
 /=render 'site_search'

@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
+  include PgSearch
 
+  multisearchable :against => [:title, :content]
 
   INDEX_DETAILS = %w(
     posts.slug
@@ -27,6 +29,11 @@ class Post < ActiveRecord::Base
   belongs_to :user
 
   before_save :update_slug
+
+  def self.full_text_search query
+    self.index_details.where("LOWER(title) like LOWER(?)", "%#{query}%")
+    #self.index_details.where("id in (?)", PgSearch.multisearch(query).pluck(:id))
+  end
 
   def self.index_details
    # select(INDEX_DETAILS).joins(:user).where("posts.status = 1").order("posts.id DESC")

@@ -1,0 +1,34 @@
+.blog-header
+  .row
+    .col-md-offset-2.col-md-8
+      a href="/"
+        =image_tag('sourcepad_black.png')
+      h5
+        |Made with love from
+        a href="/" Sourcepad
+
+
+.blog-entries.blog-index
+  -if @posts.length > 0
+    -@posts.each do |post|
+      .row
+        .col-md-offset-2.col-md-8
+          .blog-entry
+            .blog-info
+              a href="/blog/#{post.slug}"
+                h2.title =post.title
+              span.date =format_date post.posted_date
+            .blog-excerpt
+              p
+                =raw post.excerpt
+  -else
+    .no-result
+      span NO RESULTS FOUND
+
+
+
+.row
+  .col-md-offset-2.col-md-8.text-center
+    =render 'search_form'
+
+/=render 'site_search'

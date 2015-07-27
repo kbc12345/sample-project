@@ -20,6 +20,7 @@ gem 'kaminari'
 gem 'rails_12factor', group: :production
 gem 'remotipart', '~> 1.2'
 gem 'turbolinks'
+gem 'pg_search'
 
 #angular libs
 gem 'bourbon'

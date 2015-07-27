@@ -3,7 +3,7 @@ class BlogController < ApplicationController
  # before_action :find_post, only: :show
 
   layout 'blog'
-  
+
   def index
     @posts = Post.index_details
   end
@@ -13,8 +13,13 @@ class BlogController < ApplicationController
   end
 
   def search
+    if params[:query].present?
+      @posts = Post.full_text_search params[:query]
+    else
+      redirect_to "/blog"
+    end
   end
 
 
-  
+
 end
