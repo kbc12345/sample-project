@@ -1,3 +1,5 @@
+-content_for :title, "Careers"
+
 =render '/site/partials/header'
 
 section#careers-header
@@ -10,7 +12,7 @@ section#careers-header
 / section#career-landing
 /   =render 'landing'
 
-  
+
 sectin#careers-intro
   .map-icon-holder
     i.icon.icon-code
@@ -28,18 +30,18 @@ section#careers-content
         .job-position
           .job-photo
             =image_tag('ruby.png')
-          h3.job-title 
-            |RUBY ON RAILS 
+          h3.job-title
+            |RUBY ON RAILS
             br
             |DEVELOPER
           p We are looking for Ruby on Rails developer who likes to solve hard problems and write clean code and is passionate about how web technology is changing the world.
-          h4 Skills/Qualifications 
-          p 
+          h4 Skills/Qualifications
+          p
             |B.S. or higher in Computer Science or equivalent
-            br 
-            |2+ years in Ruby on Rails 
             br
-            |HTML4/5, CSS3/4, Javascript 
+            |2+ years in Ruby on Rails
+            br
+            |HTML4/5, CSS3/4, Javascript
             br
             |RSpec, unit testing and integration testing
 
@@ -51,18 +53,18 @@ section#careers-content
         .job-photo
             =image_tag('ios.png')
         .job-position
-          h3.job-title 
+          h3.job-title
             |iOS
             br
             |DEVELOPER
           p We are looking for an experienced iOS developer/engineer who is organized, has an eye for detail, writes excellent Objective C and is excited about the future of mobile.
-          h4 Skills/Qualifications 
-          p 
-            |B.S. or higher in Computer Science or equivalent 
+          h4 Skills/Qualifications
+          p
+            |B.S. or higher in Computer Science or equivalent
             br
-            |2-3 years experience in Objective C 
+            |2-3 years experience in Objective C
             br
-            |Previous experience in C or C++ is a plus 
+            |Previous experience in C or C++ is a plus
             br
             |Experience with APIs
 
@@ -73,13 +75,13 @@ section#careers-content
 
 
 
-.modal 
+.modal
   =form_for @applicant, :html => { :multipart => true }, remote: true do |f|
     .modal-dialog
       .modal-header
         a.btn-close.btn-apply href="#" ×
         h4 Application
-        
+
       .modal-body
         .form-group
           label Name
@@ -91,18 +93,17 @@ section#careers-content
           label Email
           label.danger *
           =f.text_field :email, class: "form-control required email", placeholder: "Email"
-        
+
 
         .form-group
           =f.file_field :resume
           label for="applicant_resume"
-            a.btn-cv 
+            a.btn-cv
               |Upload CV
-       
+
 
 
       .modal-footer
         .row
           .col-md-16ow
             a.btn.btn-primary.btn-submit-applicant href="#" Submit
-

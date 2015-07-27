@@ -1,16 +1,17 @@
 doctype html
 html
   head
-    title Sourcepad
+    title
+      =yield(:title).empty? ? "Sourcepad" : "Sourcepad | #{yield(:title)}"
     meta charset="utf-8"
-    meta content="IE=edge" http-equiv="X-UA-Compatible" 
-    meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" 
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"
     meta content="yes" name="apple-mobile-web-app-capable"
-    meta content="true" name="HandheldFriendly" 
-    meta content="yes" name="apple-mobile-web-app-capable" 
-    meta content="" name="description" 
-    meta content="" name="keywords" 
-    meta content="text/html;charset=UTF-8" http-equiv="content-type" 
+    meta content="true" name="HandheldFriendly"
+    meta content="yes" name="apple-mobile-web-app-capable"
+    meta content="Built for entrepreneurs, by entrepreneurs. We've helped more than 100 bootstrapped startups, small businesses and venture backed companies build their ideas since 2008. " name="description"
+    meta content="startup, small businesses, ideas, ruby on rails, ios, software development" name="keywords"
+    meta content="text/html;charset=UTF-8" http-equiv="content-type"
 
   = stylesheet_link_tag    'site', media: 'all'
   link href="http://fontastic.s3.amazonaws.com/83ZHwZKyhFtb2gpHDQTHhA/icons.css" rel="stylesheet"

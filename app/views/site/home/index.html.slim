@@ -1,3 +1,5 @@
+-content_for :title, "Home"
+
 #header
   =render '/site/partials/home_nav'
 
@@ -10,22 +12,22 @@ section#about
 
 section#awards
   .container
-    .row     
+    .row
       =render 'awards'
 
 section#acquired
   .container
-    .row     
+    .row
       =render 'acquired'
 
 section#news
-  .container 
-    =render 'news'      
+  .container
+    =render 'news'
 
 section#customers
-  .container 
+  .container
     =render 'customers'
-  
+
 
 =render '/site/partials/questions'
 =render 'scripts'
