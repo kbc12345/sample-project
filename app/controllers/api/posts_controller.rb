@@ -4,6 +4,7 @@ class Api::PostsController < ApiController
 
   def index
     @collection = Post.page(current_page)
+    # paker
   end
 
   def show
