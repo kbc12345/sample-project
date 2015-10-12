@@ -8,7 +8,7 @@ class Api::ApplicantsController < ApiController
 
 
   def destroy
-    render_obj_errors unless @obj.destroy
+    delete_helper
   end
 
   private

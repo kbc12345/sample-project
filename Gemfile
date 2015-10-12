@@ -37,9 +37,9 @@ gem 'rails-assets-ng-device-detector'
 gem 'rails-assets-angularjs-file-upload'
 gem 'rails-assets-ngSanitize'
 
+gem 'pry-rails'
 
 group :development do
-  gem 'pry-rails'
   gem 'capistrano', '~> 3.2.0', require: false
   gem 'capistrano-rails', '~> 1.1', require: false
   gem 'capistrano-bundler', '~> 1.1', require: false
@@ -51,4 +51,12 @@ end
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
+end
+
+group :test do
+  gem 'codeclimate-test-reporter', require: nil
+  gem 'simplecov', require:  false
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'fuubar'
 end

@@ -6,7 +6,7 @@ $(document).on 'ready page:load', ->
   windowHeight = window.innerHeight
 
   # makes the landing text center
-  if $("#landing-text").length > 0
+  if $("#landing-text").length > 0 
     heightOffset = windowHeight-$('#landing-text').height()
     # Special case when it is a small mobile phone ex. iphone 4,5
     heightOffset = 130 if heightOffset < 80
@@ -105,8 +105,8 @@ isFormValid = ->
   emailError = false
   $('.required').each (index, element) =>
 
-    if $(element).val().trim() == "" 
-      requiredError = true 
+    if $(element).val().trim() == ""
+      requiredError = true
       $(element).addClass("error")
     else if $(element).hasClass("email") && !isEmail(element.value)
       emailError = true

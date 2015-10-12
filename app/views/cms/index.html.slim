@@ -1,21 +1,67 @@
-h1 hello words
-/ div(ui-view)
-/ div(growl)
 
-#error-message
-  p werewr
+.post-categories-page ng-controller="PostCatCtrl"
+  h1 hello words
+  / div(ui-view)
+  / div(growl)
 
-javascript:
-  console.log("zz");
-  $.ajax({url: "/api/posts",headers: {"Authorization":"zwerewrewr"},
+  table#post-category-table
+    thead
+      tr
+        th Name
+        th
+    tbody
+      tr ng-repeat="obj in collection"
+        td ng-bind="obj.name"
+        td
+          button ng-click="editCat(obj)" Edit
+  br
+  br
+  form ng-if="!!currentCat.id"
+    input ng-model="currentCat.name"
+    button ng-click="update()" Update
+/ 
+/ .sign-in ng-controller="SignInCtrl"
+/
+/   #error-message ng-if="!!error"
+/     p ng-bind="error"
+/
+/   form name="sign-in-form"
+/     input ng-model="credentials.email"
+/     input ng-model="credentials.password" type="password"
+/     button ng-click="signIn()" Sign in
+/   br
+/   input ng-model="calc.x"
+/   input ng-model="calc.y"
+/   button ng-click="add()"
+/
+/   span ng-bind="calc.total"
 
-    success: function(result){
-      debugger
-      $('#error-message').hide();
-    },
-
-    error: function(result){
-      $("#error-message p").html(result.responseJSON.error);
-    }
-
-  });
+/ javascript:
+/   console.log("zz");
+/   $.ajax({url: "/api/post_categories",headers: {"Authorization":"zwerewrewr"},
+/
+/     success: function(result){
+/       var template = "";
+/       for(var i=0; i<result.collection.length; i++){
+/         template += "<tr>";
+/         template += "<td>"+result.collection[i].name+"</td>";
+/         template += "<td><a class='"+result.collection[i].id+"_edit edit-btn' href='#'>Edit</a>, <a href=''>Delete</a></td>"
+/         template += "</tr>";
+/       }
+/
+/       $('#post-category-table tbody').html(template);
+/
+/       $('.edit-btn').click(function(e){
+/         e.preventDefault();
+/         console.log("hello");
+/
+/       });
+/
+/
+/     },
+/
+/     error: function(result){
+/       $("#error-message p").html(result.responseJSON.error);
+/     }
+/
+/   });

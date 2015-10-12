@@ -35,10 +35,11 @@ Rails.application.routes.draw do
     resource :session, only: %i(show create destroy)
     resources :posts
     resources :post_categories
-    resources :messages, only: %i(index destroy)
+    resources :messages
     resources :applicants, only: %i(index destroy)
     resources :billings, only: %i(index create)
     resources :terms, only: %i(index update)
+    resources :users
   end
 
 

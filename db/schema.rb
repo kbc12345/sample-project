@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727154106) do
+ActiveRecord::Schema.define(version: 20151001075022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20150727154106) do
     t.string   "tags",             default: [],    array: true
     t.boolean  "featured",         default: false
     t.integer  "order",            default: 0
+    t.integer  "last_updated_by"
   end
 
   create_table "terms", force: :cascade do |t|

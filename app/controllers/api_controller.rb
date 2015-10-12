@@ -1,4 +1,5 @@
 class ApiController < ApplicationController
+  include Common
 
   protect_from_forgery with: :null_session
   before_action :authenticate_request
@@ -22,8 +23,6 @@ class ApiController < ApplicationController
   end
 
 
-
-
   def current_user
     @current_user ||= User.find_by(access_token: access_token) if access_token
   end
@@ -34,7 +33,7 @@ class ApiController < ApplicationController
 
 
   def current_page
-    params[:page].present? ? params[:page] : 1
+    @current_page ||= params[:page].present? ? params[:page] : 1
   end
 
   def search_query
@@ -45,8 +44,14 @@ class ApiController < ApplicationController
   protected
 
   def render_obj_errors(obj = nil)
+      render json: {
+        message: 'Validation failed', errors: (obj || @obj).errors.full_messages
+      }, status: 422
+    end
+
+  def obj_not_found
     render json: {
-      message: 'Validation failed', errors: (obj || @obj).errors.full_messages
-    }, status: 422
+      message: 'ID not found'
+    }
   end
 end

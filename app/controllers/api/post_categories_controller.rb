@@ -3,7 +3,10 @@ class Api::PostCategoriesController < ApiController
   before_action :find_obj, except: [:index,:create]
 
   def index
-    @collection = PostCategory.all
+    render json:
+          {
+            collection: PostCategory.all
+          }
   end
 
   def show
@@ -11,15 +14,15 @@ class Api::PostCategoriesController < ApiController
 
   def create
     @obj = PostCategory.new(obj_params)
-    render_obj_errors unless @obj.save
+    create_helper
   end
 
   def update
-    render_obj_errors unless @obj.update_attributes(obj_params)
+    update_helper
   end
 
   def destroy
-    render_obj_errors unless @obj.destroy
+    delete_helper
   end
 
   private
@@ -34,5 +37,7 @@ class Api::PostCategoriesController < ApiController
       name
     ))
   end
+
+
 
 end

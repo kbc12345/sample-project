@@ -1,10 +1,2 @@
-//= require jquery
-//= require jquery_ujs
-//= require jquery.remotipart
-//= require turbolinks
-//= require lib/fastclick
-//= require lib/growl
-//= require lib/nprogress
-//= require lib/backstretch
-//= require works
-//= require init
+//= require angular
+//= require ng_app
