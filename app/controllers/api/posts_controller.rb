@@ -3,25 +3,26 @@ class Api::PostsController < ApiController
   before_action :find_obj, except: [:index,:create]
 
   def index
-    @collection = Post.page(current_page)
-    # paker
+    @collection = Post.index_details.page(current_page)
+    render json: {collection: @collection, metadata: metadata}
   end
 
   def show
-    @categories = PostCategory.all
+    
   end
 
   def create
-    @obj = current_user.posts.new(obj_params)
-    render_obj_errors unless @obj.save
+    @obj = Post.new(obj_params.merge({user_id: current_user.id, last_updated_by: current_user.id}))
+    create_helper
   end
 
   def update
-    render_obj_errors unless @obj.update_attributes(obj_params)
+    obj_params.merge(last_updated_by: current_user.id)
+    update_helper
   end
 
   def destroy
-    render_obj_errors unless @obj.destroy
+    delete_helper
   end
 
   private
@@ -29,7 +30,6 @@ class Api::PostsController < ApiController
   def find_obj
     @obj = Post.find(params[:id])
   end
-
 
   def obj_params
     params.require(:post).permit(*%i(
@@ -44,7 +44,8 @@ class Api::PostsController < ApiController
       tags
       featured
       order
+      last_updated_by
     ))
-  end
+  end 
 
 end

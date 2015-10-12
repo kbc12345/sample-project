@@ -1,7 +1,10 @@
 class User < ActiveRecord::Base
   include Authenticable
 
-  has_many :posts
+  has_many :updated_post, class_name: "Post", foreign_key: "last_updated_by"
+  has_many :created_post, class_name: "Post", foreign_key: "user_id"
+  # current_user.posts.create
+
   validates :email, presence: true,  uniqueness: true
   validate :validate_password_presence
   validate :validate_password_length
@@ -29,7 +32,14 @@ class User < ActiveRecord::Base
   def destroy_access_token
     self.update(access_token: nil)
   end
-  
+
+  def self.index_details
+    select("first_name", "last_name", "email", "access_token")
+  end
+
+  def self.page page
+    limit(10).offset((page.to_i*10) - 10)
+  end
 
   def self.find_by_credentials(creds)
     user = self.find_by_email(creds[:email])

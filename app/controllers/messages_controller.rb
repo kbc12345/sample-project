@@ -1,6 +1,14 @@
-class MessagesController < ApplicationController
+class MessagesController < ApiController
 
+  before_action :find_obj, except: [:index,:create]
 
+  def index
+      @collection = Message.all
+  end
+
+  def show
+  end
+  
   def create
     Message.create(obj_params)
 
@@ -20,7 +28,10 @@ class MessagesController < ApplicationController
 
   private
 
-
+  def find_obj
+    @obj = Message.find(params[:id])
+  end
+  
   def obj_params
     params.require(:message).permit(*%i(
       sender

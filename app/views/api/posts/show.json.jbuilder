@@ -13,8 +13,3 @@ json.post do
     slug
   )
 end
-
-json.categories @categories do |obj|
-  json.name obj.name
-  json.id obj.id
-end
