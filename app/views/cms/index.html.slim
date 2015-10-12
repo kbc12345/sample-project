@@ -1,2 +1,21 @@
-div(ui-view)
-div(growl)
+h1 hello words
+/ div(ui-view)
+/ div(growl)
+
+#error-message
+  p werewr
+
+javascript:
+  console.log("zz");
+  $.ajax({url: "/api/posts",headers: {"Authorization":"zwerewrewr"},
+
+    success: function(result){
+      debugger
+      $('#error-message').hide();
+    },
+
+    error: function(result){
+      $("#error-message p").html(result.responseJSON.error);
+    }
+
+  });

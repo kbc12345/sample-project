@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
-  include PgSearch
-
-  multisearchable :against => [:title, :content]
+  # include PgSearch
+  #
+  # multisearchable :against => [:title, :content]
 
   INDEX_DETAILS = %w(
     posts.slug

@@ -22,13 +22,13 @@ Rails.application.routes.draw do
       get :search
     end
   end
-  
+
 
   ###########
   # CMS
   ###########
   get 'cms' => 'cms#index'
-  get 'cms/*path' => 'cms#index'
+  # get 'cms/*path' => 'cms#index'
   get 'billing' => 'cms#index'
 
   namespace :api, defaults: { format: 'json' } do
@@ -40,5 +40,7 @@ Rails.application.routes.draw do
     resources :billings, only: %i(index create)
     resources :terms, only: %i(index update)
   end
+
+
 
 end
