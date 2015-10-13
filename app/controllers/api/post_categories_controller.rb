@@ -5,7 +5,8 @@ class Api::PostCategoriesController < ApiController
   def index
     render json:
           {
-            collection: PostCategory.all
+            collection: PostCategory.page(current_page).order("id DESC"),
+            metadata: {total_page: total_page_number}
           }
   end
 
@@ -26,6 +27,10 @@ class Api::PostCategoriesController < ApiController
   end
 
   private
+
+  def total_page_number
+    (PostCategory.count/5.0).ceil
+  end
 
   def find_obj
     @obj = PostCategory.find(params[:id])

@@ -1,67 +1,56 @@
 
 .post-categories-page ng-controller="PostCatCtrl"
-  h1 hello words
+  h1 Post Categories
   / div(ui-view)
   / div(growl)
+
+
 
   table#post-category-table
     thead
       tr
+        button ng-click="addCat()" Add new Post Category
+      tr
         th Name
-        th
     tbody
       tr ng-repeat="obj in collection"
         td ng-bind="obj.name"
         td
-          button ng-click="editCat(obj)" Edit
+          button ng-click="editCat(obj,$index)" Edit
+        td
+          button ng-click="deleteCat(obj, $index)" Delete
   br
+  form
+    ul
+      li style="display: inline" ng-repeat="n in total_page"
+        a ng-if="n == currentPage" href="" ng-bind="n" ng-click="switchToPage(n)"
+        a ng-if="n != currentPage" href="" style="text-decoration: none" ng-bind="n" ng-click="switchToPage(n)"
+      
   br
-  form ng-if="!!currentCat.id"
-    input ng-model="currentCat.name"
-    button ng-click="update()" Update
-/ 
-/ .sign-in ng-controller="SignInCtrl"
-/
-/   #error-message ng-if="!!error"
-/     p ng-bind="error"
-/
-/   form name="sign-in-form"
-/     input ng-model="credentials.email"
-/     input ng-model="credentials.password" type="password"
-/     button ng-click="signIn()" Sign in
-/   br
-/   input ng-model="calc.x"
-/   input ng-model="calc.y"
-/   button ng-click="add()"
-/
-/   span ng-bind="calc.total"
 
-/ javascript:
-/   console.log("zz");
-/   $.ajax({url: "/api/post_categories",headers: {"Authorization":"zwerewrewr"},
-/
-/     success: function(result){
-/       var template = "";
-/       for(var i=0; i<result.collection.length; i++){
-/         template += "<tr>";
-/         template += "<td>"+result.collection[i].name+"</td>";
-/         template += "<td><a class='"+result.collection[i].id+"_edit edit-btn' href='#'>Edit</a>, <a href=''>Delete</a></td>"
-/         template += "</tr>";
-/       }
-/
-/       $('#post-category-table tbody').html(template);
-/
-/       $('.edit-btn').click(function(e){
-/         e.preventDefault();
-/         console.log("hello");
-/
-/       });
-/
-/
-/     },
-/
-/     error: function(result){
-/       $("#error-message p").html(result.responseJSON.error);
-/     }
-/
-/   });
+  #error-message ng-if="errors.length > 0"
+    ul
+      li ng-repeat="error in errors"
+        span ng-bind="error"
+
+  form ng-if="!!currentCat.id && action == 'edit' || action == 'add'"
+    input ng-model="currentCat.name"
+    button ng-if="action == 'edit'" ng-click="update()" ng-bind="action"
+    button ng-if="action == 'add'" ng-click="add()" ng-bind="action"
+
+// / 
+// / .sign-in ng-controller="SignInCtrl"
+// /
+// /   #error-message ng-if="!!error"
+// /     p ng-bind="error"
+// /
+// /   form name="sign-in-form"
+// /     input ng-model="credentials.email"
+// /     input ng-model="credentials.password" type="password"
+// /     button ng-click="signIn()" Sign in
+// /   br
+// /   input ng-model="calc.x"
+// /   input ng-model="calc.y"
+// /   button ng-click="add()"
+// /
+// /   span ng-bind="calc.total"
